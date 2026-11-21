@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আপনার শপিং ব্যাগ — জ্ঞানকোষ ডিজিটাল প্রেস</title>
+  <meta name="description" content="আপনার নির্বাচিত ডিজিটাল নোট ও বইয়ের তালিকা। কুপন কোড প্রয়োগ করুন ও নিরাপদ চেকআউটে এগিয়ে যান।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-top: var(--space-6);
+    }
+
+    @media (min-width: 860px) {
+      .cart-layout {
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: var(--space-8);
+        align-items: start;
+      }
+    }
+
+    /* Cart Items Table / List */
+    .cart-items-card {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--rule-sand);
+      box-shadow: 2px 2px 0 var(--rule-sand);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .cart-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--rule-sand);
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    .cart-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-grow: 1;
+      min-width: 200px;
+    }
+
+    .cart-item-thumb {
+      width: 60px;
+      height: 44px;
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Order Summary Sidebar */
+    .order-summary-box {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0 var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      padding: var(--space-6);
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-sm);
+      color: var(--slate-ink);
+      padding: var(--space-2) 0;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--carbon-ink);
+      border-top: 2px solid var(--carbon-ink);
+      padding-top: var(--space-3);
+      margin-top: var(--space-2);
+    }
+
+    /* Coupon Box */
+    .coupon-box {
+      margin: var(--space-4) 0;
+      padding-top: var(--space-3);
+      border-top: 1px dashed var(--rule-sand);
+    }
+
+    .coupon-form {
+      display: flex;
+      gap: var(--space-2);
+    }
+
+    .coupon-applied-badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--success-forest-subtle);
+      border: 1px solid rgba(30, 107, 56, 0.3);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      color: var(--success-forest);
+      font-weight: 700;
+      margin-top: var(--space-2);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#cart-main" class="skip-link">মূল ব্যাগে চলে যান</a>
+
+  <aside class="top-notice-bar" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <header class="site-header" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-header-btn" aria-label="শপিং ব্যাগে যান">
+          <span>ব্যাগ</span>
+          <span class="cart-badge-count" aria-live="polite">০</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="মেনু খুলুন" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন মেনু">
+    <div class="mobile-drawer-content">
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="মেনু বন্ধ করুন">✕ বন্ধ করুন</button>
+      <nav aria-label="মোবাইল লিঙ্কসমূহ">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+      <div style="margin-top:auto; font-size:var(--text-xs); color:var(--slate-ink);">
+        <p>সরাসরি যোগাযোগ: ০১৯০২৬০৭৪০৬</p>
+        <p>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল)</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="cart-main" class="container section">
+    <div class="section-header">
+      <span class="section-eyebrow">শপিং ব্যাগ</span>
+      <h1 class="section-title">আপনার নির্বাচিত ডিজিটাল ফাইলসমূহ</h1>
+      <p class="section-subtitle">ডিজিটাল পণ্যের ক্ষেত্রে প্রতি আইটেমের পরিমাণ ১ কপি নির্ধারিত। কুপন প্রয়োগ করে স্বচ্ছ মূল্যে অর্ডার সম্পন্ন করুন।</p>
+    </div>
+
+    <!-- Active Cart Layout (Hidden when empty) -->
+    <div class="cart-layout" id="activeCartWrap">
+      <!-- Items Table -->
+      <div class="cart-items-card">
+        <div style="background:var(--paper-subtle); padding:var(--space-3) var(--space-4); border-bottom:1px solid var(--rule-sand); font-size:var(--text-xs); font-weight:700; color:var(--slate-ink); display:flex; justify-content:space-between;">
+          <span>নির্বাচিত পণ্য বিবরণ</span>
+          <span>একক মূল্য ও অপসারণ</span>
+        </div>
+        <div id="cartItemsList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Order Summary Box -->
+      <aside class="order-summary-box" aria-label="মূল্য হিসাব সংক্ষেপ">
+        <h2 style="font-size:var(--text-md); margin-bottom:var(--space-3); color:var(--carbon-ink); border-bottom:1px solid var(--rule-sand); padding-bottom:var(--space-2);">
+          মূল্য হিসাব সংক্ষেপ
+        </h2>
+
+        <div class="summary-line">
+          <span>মোট পণ্য মূল্য:</span>
+          <span id="summarySubtotal" style="font-weight:700; color:var(--carbon-ink);">৳ ০</span>
+        </div>
+
+        <div class="summary-line" id="summaryCouponRow" style="display:none; color:var(--success-forest);">
+          <span>কুপন ডিসকাউন্ট:</span>
+          <span id="summaryCouponDiscount" style="font-weight:700;">- ৳ ০</span>
+        </div>
+
+        <div class="summary-line">
+          <span>প্রসেসিং ফি:</span>
+          <span style="font-weight:700; color:var(--success-forest);">৳ ০ (ফ্রি)</span>
+        </div>
+
+        <!-- Coupon Input Area -->
+        <div class="coupon-box">
+          <label for="couponInput" style="font-size:var(--text-xs); font-weight:700; color:var(--carbon-ink); display:block; margin-bottom:var(--space-1);">
+            কুপন কোড (যদি থাকে):
+          </label>
+          <div class="coupon-form" id="couponFormGroup">
+            <input type="text" id="couponInput" class="input-control" placeholder="যেমন: STUDENT10" style="text-transform:uppercase;">
+            <button type="button" class="btn btn-secondary" onclick="applyCartCoupon();" style="flex-shrink:0;">প্রয়োগ করুন</button>
+          </div>
+          <div id="appliedCouponDisplay" style="display:none;"></div>
+        </div>
+
+        <div class="summary-total">
+          <span>সর্বমোট প্রদেয় মূল্য:</span>
+          <span id="summaryFinalTotal" style="color:var(--seal-crimson); font-size:var(--text-2xl);">৳ ০</span>
+        </div>
+
+        <div style="margin-top:var(--space-6);">
+          <a href="checkout.html" class="btn btn-primary btn-block" style="font-size:var(--text-md); padding:var(--space-3);">
+            অর্ডার সম্পন্ন করতে এগিয়ে যান →
+          </a>
+          <a href="shop.html" class="btn btn-subtle btn-block" style="margin-top:var(--space-2);">
+            আরও নোট বা বই খুঁজুন
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Empty Cart Fallback -->
+    <div class="no-results-card" id="emptyCartBlock" style="display:none;">
+      <div style="font-size:3rem; margin-bottom:var(--space-2);">🛍️</div>
+      <h2 style="font-size:var(--text-xl); margin-bottom:var(--space-2); color:var(--carbon-ink);">আপনার শপিং ব্যাগ বর্তমানে খালি রয়েছে</h2>
+      <p style="font-size:var(--text-base); color:var(--slate-ink); max-width:48ch; margin:0 auto var(--space-4);">
+        আপনার পছন্দের অধ্যায়ভিত্তিক নোট, সম্পূর্ণ ই-বুক বা রেডি-মেড ওয়েবসাইট টেমপ্লেট বেছে নিতে ক্যাটালগে ঘুরে দেখুন।
+      </p>
+      <a href="shop.html" class="btn btn-primary">ক্যাটালগে ফিরে যান</a>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-wordmark" style="margin-bottom:var(--space-3);">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </a>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ডে প্রস্তুতকৃত ডিজিটাল নোট, গাইড এবং ওয়েব টেমপ্লেটের বিশ্বস্ত কেন্দ্র।
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">ক্যাটালগ</h3>
+        <ul>
+          <li><a href="shop.html?class=ssc">নবম-দশম (SSC)</a></li>
+          <li><a href="shop.html?class=hsc">একাদশ-দ্বাদশ (HSC)</a></li>
+          <li><a href="shop.html?class=admission">ভর্তি পরীক্ষা</a></li>
+          <li><a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">গুরুত্বপূর্ণ লিংক</h3>
+        <ul>
+          <li><a href="library.html">আমার লাইব্রেরি</a></li>
+          <li><a href="support.html">সহায়তা ও প্রশ্নোত্তর</a></li>
+          <li><a href="support.html#refund">রিফান্ড নীতিমালা</a></li>
+          <li><a href="support.html#license">লাইসেন্সিং শর্তাবলী</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">যোগাযোগ ও ঠিকানা</h3>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ফোন ও WhatsApp:</strong><br>
+          <a href="https://wa.me/8801902607406" style="color:var(--carbon-ink); font-weight:700;">০১৯০২৬০৭৪০৬</a>
+        </p>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ইমেইল:</strong> ishanxczs@gmail.com
+        </p>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)
+        </p>
+        <div style="margin-top:var(--space-3); display:flex; gap:var(--space-2);">
+          <a href="https://www.tiktok.com/@its_ishan_17?_r=1&_t=ZS-9BT1d8s78pp" target="_blank" rel="noopener noreferrer" class="badge" aria-label="TikTok প্রোফাইল">TikTok</a>
+          <a href="https://www.instagram.com/ishanxczs26?avpt=c2IxeW9yY2x2ejlz" target="_blank" rel="noopener noreferrer" class="badge" aria-label="Instagram প্রোফাইল">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>কোনো অপ্রয়োজনীয় ট্র্যাকার বা কুকি নেই • অতি হালকা ও মোবাইল ফ্রেন্ডলি</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    function renderCartView() {
+      var cart = StoreEngine.getCart();
+      var activeWrap = document.getElementById('activeCartWrap');
+      var emptyBlock = document.getElementById('emptyCartBlock');
+      var list = document.getElementById('cartItemsList');
+
+      if (cart.length === 0) {
+        activeWrap.style.display = 'none';
+        emptyBlock.style.display = 'block';
+        return;
+      }
+
+      activeWrap.style.display = 'grid';
+      emptyBlock.style.display = 'none';
+
+      var html = '';
+      for (var i = 0; i < cart.length; i++) {
+        var it = cart[i];
+        var product = StoreEngine.getProductById(it.id) || it;
+
+        html += [
+          '<div class="cart-item-row" id="cart-row-' + it.id + '">',
+          '  <div class="cart-item-info">',
+          '    <div class="cart-item-thumb">',
+          '      ' + StoreEngine.generateSvgCover(product, 60, 44),
+          '    </div>',
+          '    <div>',
+          '      <span class="badge" style="font-size:0.625rem; margin-bottom:2px;">' + it.classLabel + '</span>',
+          '      <h3 style="font-size:var(--text-sm); margin:0; color:var(--carbon-ink);"><a href="product.html?id=' + it.id + '" style="color:inherit; text-decoration:none;">' + it.title + '</a></h3>',
+          '      <span style="font-size:var(--text-xs); color:var(--slate-ink);">ফরম্যাট: ' + it.format + ' • সাইজ: ' + it.fileSize + '</span>',
+          '    </div>',
+          '  </div>',
+          '  <div style="display:flex; align-items:center; gap:var(--space-4);">',
+          '    <span style="font-weight:800; font-size:var(--text-md); color:var(--carbon-ink);">' + StoreEngine.formatPrice(it.priceSale) + '</span>',
+          '    <button type="button" class="btn btn-subtle" onclick="removeCartItem(\'' + it.id + '\');" style="min-height:36px; padding:2px 8px; color:var(--seal-crimson); font-size:var(--text-xs);" aria-label="' + it.title + ' ব্যাগ থেকে মুছুন">মুছে ফেলুন</button>',
+          '  </div>',
+          '</div>'
+        ].join('\n');
+      }
+      list.innerHTML = html;
+
+      // Update Math
+      updateCartSummary();
+    }
+
+    function updateCartSummary() {
+      var subtotal = StoreEngine.getCartSubtotal();
+      var couponDiscount = StoreEngine.getCouponDiscount();
+      var finalTotal = StoreEngine.getCartFinalTotal();
+      var appliedCoupon = StoreEngine.getAppliedCoupon();
+
+      document.getElementById('summarySubtotal').textContent = StoreEngine.formatPrice(subtotal);
+      document.getElementById('summaryFinalTotal').textContent = StoreEngine.formatPrice(finalTotal);
+
+      var couponRow = document.getElementById('summaryCouponRow');
+      var appliedDisplay = document.getElementById('appliedCouponDisplay');
+      var formGroup = document.getElementById('couponFormGroup');
+
+      if (appliedCoupon && couponDiscount > 0) {
+        couponRow.style.display = 'flex';
+        document.getElementById('summaryCouponDiscount').textContent = '- ' + StoreEngine.formatPrice(couponDiscount);
+
+        formGroup.style.display = 'none';
+        appliedDisplay.style.display = 'block';
+        appliedDisplay.innerHTML = [
+          '<div class="coupon-applied-badge">',
+          '  <span>✓ কুপন সক্রিয়: ' + appliedCoupon.code + ' (' + appliedCoupon.coupon.label + ')</span>',
+          '  <button type="button" onclick="removeCartCoupon();" style="background:none; border:none; color:var(--seal-crimson); font-weight:700; cursor:pointer;">মুছুন</button>',
+          '</div>'
+        ].join('\n');
+      } else {
+        couponRow.style.display = 'none';
+        formGroup.style.display = 'flex';
+        appliedDisplay.style.display = 'none';
+      }
+    }
+
+    function removeCartItem(productId) {
+      StoreEngine.removeFromCart(productId);
+      renderCartView();
+    }
+
+    function applyCartCoupon() {
+      var input = document.getElementById('couponInput');
+      var code = input ? input.value : '';
+      var res = StoreEngine.applyCoupon(code);
+      StoreEngine.showToast(res.message, res.success ? 'success' : 'error');
+      if (res.success) {
+        updateCartSummary();
+      }
+    }
+
+    function removeCartCoupon() {
+      StoreEngine.removeCoupon();
+      updateCartSummary();
+      StoreEngine.showToast('কুপন অপসারণ করা হয়েছে।', 'info');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCartView();
+
+      // Mobile Menu
+      var menuBtn = document.getElementById('mobileMenuBtn');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeBtn = document.getElementById('mobileDrawerClose');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', function() {
+          drawer.classList.add('open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        });
+      }
+      if (closeBtn && drawer && menuBtn) {
+        closeBtn.addEventListener('click', function() {
+          drawer.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

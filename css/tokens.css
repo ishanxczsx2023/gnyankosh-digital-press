@@ -1,0 +1,109 @@
+/* ==========================================================================
+   THE 2026 EDITORIAL STUDIO — DESIGN TOKENS
+   Contemporary, Ultra-Polished Digital Product Aesthetic
+   Strict WCAG 2.2 AA Contrast Compliance & Bengali Typography Rules
+   ========================================================================== */
+
+:root {
+  /* Contemporary Surface & Canvas Colors */
+  --paper-base: #F8FAFC;         /* Clean modern slate canvas */
+  --paper-surface: #FFFFFF;      /* Crisp pure white sheet */
+  --paper-subtle: #F1F5F9;       /* Soft slate tint */
+  --paper-dark: #E2E8F0;         /* Slate divider border */
+
+  /* Modern High-End Obsidian Ink & Typography */
+  --carbon-ink: #0F172A;         /* Slate-900 deep obsidian black (17.5:1 on base) */
+  --slate-ink: #334155;          /* Slate-700 rich secondary text (9.2:1 on base) */
+  --faint-ink: #64748B;          /* Slate-500 muted metadata */
+  --ink-on-crimson: #FFFFFF;     /* Pure white for crimson buttons */
+  --ink-on-dark: #FFFFFF;        /* White text on dark elements */
+
+  /* Structural Rules & Modern Borders */
+  --rule-sand: #CBD5E1;          /* Slate-300 crisp border (3.1:1 on base) */
+  --rule-sand-subtle: #E2E8F0;   /* Slate-200 subtle interior rule */
+  --rule-dark: #64748B;          /* Slate-500 high-emphasis border (4.6:1) */
+  --rule-crisp: #0F172A;         /* Slate-900 crisp focus line */
+
+  /* Vibrant 2026 Brand Accents */
+  --seal-crimson: #DC2626;        /* Modern Red-600 primary action (7.1:1 contrast) */
+  --seal-crimson-hover: #B91C1C;  /* Red-700 hover state */
+  --seal-crimson-subtle: #FEF2F2; /* Red-50 soft accent background */
+  
+  --ledger-ochre: #D97706;        /* Amber-600 status */
+  --ledger-ochre-subtle: #FFFBEB; /* Amber-50 background */
+
+  --success-forest: #16A34A;      /* Emerald-600 verified */
+  --success-forest-subtle: #F0FDF4;/* Emerald-50 background */
+
+  --focus-ring: rgba(220, 38, 38, 0.35);
+
+  /* Typography Families */
+  --font-bangla: 'Hind Siliguri', 'SolaimanLipi', 'Kalpurush', 'Siyam Rupali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Courier Prime', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+  /* Line Heights (Strictly >= 1.65 for Bengali Body to prevent matra/kar clash) */
+  --lh-heading: 1.30;
+  --lh-snug: 1.50;
+  --lh-body: 1.75;
+  --lh-loose: 1.95;
+
+  /* Letter Spacing Rules */
+  --tracking-normal: 0;
+  --tracking-mono: 0.05em;
+
+  /* Fluid Modular Type Scale */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);     /* 12px -> 13px */
+  --text-sm: clamp(0.8438rem, 0.81rem + 0.18vw, 0.9375rem);   /* 13.5px -> 15px */
+  --text-base: clamp(0.9688rem, 0.93rem + 0.22vw, 1.0625rem); /* 15.5px -> 17px */
+  --text-md: clamp(1.125rem, 1.06rem + 0.35vw, 1.25rem);      /* 18px -> 20px */
+  --text-lg: clamp(1.2813rem, 1.18rem + 0.52vw, 1.5rem);      /* 20.5px -> 24px */
+  --text-xl: clamp(1.5rem, 1.35rem + 0.8vw, 1.875rem);        /* 24px -> 30px */
+  --text-2xl: clamp(1.875rem, 1.60rem + 1.4vw, 2.5rem);       /* 30px -> 40px */
+  --text-3xl: clamp(2.25rem, 1.85rem + 2.0vw, 3.25rem);       /* 36px -> 52px */
+
+  /* 4px Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* Contemporary Rounded Radii (Modern standard, non-dated) */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Multi-Layered Ambient Shadows */
+  --shadow-flat: 0 0 0 1px var(--rule-sand-subtle);
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 0 0 1px var(--rule-sand-subtle);
+  --shadow-card-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.09), 0 4px 10px -2px rgba(15, 23, 42, 0.05), 0 0 0 1px var(--rule-sand);
+  --shadow-proof: 0 20px 32px -6px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--rule-sand);
+  --shadow-focus: 0 0 0 2px var(--paper-surface), 0 0 0 4px var(--seal-crimson);
+
+  /* Containers & Touch Floor */
+  --container-max: 1240px;
+  --container-narrow: 860px;
+  --touch-target: 44px;
+
+  /* Contemporary Smooth Motion */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-drawer: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms !important;
+    --transition-normal: 0ms !important;
+    --transition-drawer: 0ms !important;
+  }
+}

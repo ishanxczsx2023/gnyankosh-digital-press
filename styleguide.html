@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ডিজাইন টোকেন ও কম্পোনেন্ট স্টাইলগাইড — জ্ঞানকোষ প্রেস</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-3);
+    }
+    .swatch {
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--paper-surface);
+    }
+    .swatch-color {
+      height: 60px;
+    }
+    .swatch-info {
+      padding: var(--space-2);
+      font-size: var(--text-xs);
+    }
+    .space-bar {
+      background: var(--seal-crimson);
+      height: 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-2);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">মূল কন্টেন্টে চলে যান</a>
+
+  <header class="site-header">
+    <div class="top-notice-bar">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark">
+        <span class="brand-title">জ্ঞানকোষ</span>
+        <span class="brand-subtitle">DIGITAL PRESS</span>
+      </a>
+      <div class="header-actions">
+        <span class="badge badge-crimson">ফাউন্ডেশন স্টাইলগাইড ভেরিফিকেশন</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container section">
+    <div class="section-header">
+      <span class="section-eyebrow">PHASE 3: FOUNDATION</span>
+      <h1 class="section-title">ডিজাইন টোকেন ও কম্পোনেন্ট লাইব্রেরি</h1>
+      <p class="section-subtitle">বেঙ্গল প্রেস লেজার আর্কিটেকচার: প্রতিটি টোকেন, কন্ট্রাস্ট অনুপাত, ফন্ট স্কেল ও ইন্টারেক্টিভ কম্পোনেন্ট স্টেট।</p>
+    </div>
+
+    <!-- 1. COLOR SWATCHES -->
+    <section class="section">
+      <h2>১. কালার প্যালেট ও ডব্লিউসিএজি কন্ট্রাস্ট (WCAG 2.2 AA)</h2>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--paper-base);"></div>
+          <div class="swatch-info">
+            <strong>--paper-base</strong><br>#FBF9F4 (Canvas)
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--carbon-ink);"></div>
+          <div class="swatch-info">
+            <strong>--carbon-ink</strong><br>#11161B (16.9:1 AAA)
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--slate-ink);"></div>
+          <div class="swatch-info">
+            <strong>--slate-ink</strong><br>#404A54 (8.4:1 AAA)
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--seal-crimson);"></div>
+          <div class="swatch-info">
+            <strong>--seal-crimson</strong><br>#9E2A2B (9.3:1 AAA)
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--rule-sand); border: 1px solid #11161B;"></div>
+          <div class="swatch-info">
+            <strong>--rule-sand</strong><br>#DCD6C8 (3.15:1 UI AA)
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: var(--success-forest);"></div>
+          <div class="swatch-info">
+            <strong>--success-forest</strong><br>#1E6B38 (6.8:1 AA)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TYPOGRAPHY SCALE -->
+    <section class="section">
+      <h2>২. বাংলা টাইপোগ্রাফি ও ফ্লুইড স্কেল</h2>
+      <div style="background: var(--paper-surface); border: 1px solid var(--rule-sand); padding: var(--space-6); border-radius: var(--radius-sm);">
+        <p style="font-size: var(--text-3xl); font-weight: 800; margin-bottom: var(--space-2);">H1: পড়ার টেবিলেই আসল প্রস্তুতি (3xl)</p>
+        <p style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-2);">H2: অধ্যায়ভিত্তিক নির্ভুল ডিজিটাল নোট ও গাইড (2xl)</p>
+        <p style="font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-2);">H3: এসএসসি ২০২৬ পদার্থবিজ্ঞান গতি ও বল শিট (xl)</p>
+        <p style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">H4: বিগত ৫ বছরের সকল বোর্ড পরীক্ষার সমাধান (lg)</p>
+        <p style="font-size: var(--text-base); margin-bottom: var(--space-3);">Body Text: কোনো অস্পষ্ট ফটোকপি বা অপ্রয়োজনীয় বিজ্ঞাপন নয়। অভিজ্ঞ শিক্ষকদের তৈরি পরিচ্ছন্ন ডিজিটাল নোট যা ফোনে পড়ার পাশাপাশি প্রিন্ট করেও পড়া যায়। (Base, line-height 1.75)</p>
+        <p class="font-mono" style="font-size: var(--text-sm); color: var(--slate-ink);">Monospace Numerals & TrxID: ১২০ টাকা | TrxID: 8N7A6B5C4D | NCTB-2026-PHY</p>
+      </div>
+    </section>
+
+    <!-- 3. BUTTONS & STATES -->
+    <section class="section">
+      <h2>৩. বাটন ও ইন্টারেক্টিভ স্টেটসমূহ</h2>
+      <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-primary">এখনই কিনুন (Primary)</button>
+        <button class="btn btn-secondary">কার্টে যোগ করুন (Secondary)</button>
+        <button class="btn btn-subtle">বিস্তারিত দেখুন (Subtle)</button>
+        <button class="btn btn-primary" disabled>নিষ্ক্রিয় বাটন (Disabled)</button>
+      </div>
+    </section>
+
+    <!-- 4. BADGES -->
+    <section class="section">
+      <h2>৪. ব্যাজ ও স্ট্যাম্প ভ্যারিয়েশন</h2>
+      <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+        <span class="badge badge-crimson">✓ NCTB কারিকুলাম ২০২৬</span>
+        <span class="badge badge-forest">✓ তাৎক্ষণিক ডাউনলোড প্রস্তুত</span>
+        <span class="badge badge-ochre">⚠ সীমিত সময়ের অফার</span>
+        <span class="badge">পৃষ্ঠা: ৫৪</span>
+        <span class="badge">ফরম্যাট: PDF</span>
+      </div>
+    </section>
+
+    <!-- 5. FORM CONTROLS -->
+    <section class="section">
+      <h2>৫. ফর্ম ইনপুট ও ভ্যালিডেশন স্টেট</h2>
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="test-name">আপনার পূর্ণ নাম <span class="required">*</span></label>
+          <input type="text" id="test-name" class="input-control" placeholder="যেমন: তানভীর আহমেদ" value="তানভীর আহমেদ">
+          <span class="form-helper">সঠিক নাম লিখুন</span>
+        </div>
+        <div class="form-group has-error">
+          <label class="form-label" for="test-phone">মোবাইল নম্বর <span class="required">*</span></label>
+          <input type="tel" id="test-phone" class="input-control" placeholder="০১৭XXXXXXXX" value="০১৭০">
+          <span class="form-error-msg">১১ ডিজিটের সঠিক মোবাইল নম্বর লিখুন (যেমন: ০১৭XXXXXXXX)।</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. THE ONE MEMORABLE THING: LIVE PRESS-PROOF SAMPLE VIEWER -->
+    <section class="section">
+      <h2>৬. দ্য ওয়ান মেমোরেবল থিং: লাইভ প্রেস-প্রুফ স্যাম্পল ভিউয়ার</h2>
+      <div class="proof-viewer-card" style="max-width: 640px;">
+        <div class="proof-header">
+          <span style="font-weight: 700; font-size: var(--text-sm);">SSC 2026 পদার্থবিজ্ঞান: গতি ও বল (প্রুফ কপি)</span>
+          <div class="proof-tabs">
+            <button class="proof-tab-btn active">নমুনা ১</button>
+            <button class="proof-tab-btn">নমুনা ২</button>
+            <button class="proof-tab-btn">নমুনা ৩</button>
+          </div>
+        </div>
+        <div class="proof-sheet-viewport">
+          <div class="proof-page-badge">পৃষ্ঠা ২/৫৪</div>
+          <div class="proof-margin-rule">
+            <h3 style="font-size: var(--text-md); margin-bottom: var(--space-2);">অধ্যায় ২: গতির মৌলিক সমীকরণসমূহ</h3>
+            <p style="font-size: var(--text-sm); margin-bottom: var(--space-3);">যেসব রাশির মান ও দিক উভয়ই আছে তাদের ভেক্টর রাশি বলে। নিম্নে গতির মৌলিক সমীকরণসমূহ প্রদত্ত হলো:</p>
+            <div style="background: var(--paper-dark); padding: var(--space-3); border: 1px solid var(--rule-sand); font-family: var(--font-mono); font-size: var(--text-sm); margin-bottom: var(--space-3);">
+              v = u + at<br>
+              s = ((u + v) / 2) × t<br>
+              s = ut + (1/2)at²<br>
+              v² = u² + 2as
+            </div>
+            <p style="font-size: var(--text-xs); color: var(--slate-ink);">✓ লেজার-শার্প ভেক্টর টাইপোগ্রাফি • জুম করলেও ফাটবে না</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PARAMETRIC SVG COVERS & PRODUCT CARD -->
+    <section class="section">
+      <h2>৭. প্যারামেট্রিক এসভিজি কভার ও প্রোডাক্ট কার্ড</h2>
+      <div style="max-width: 320px;">
+        <article class="product-card">
+          <div class="product-cover-wrap" id="sample-cover-container">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="product-body">
+            <div class="product-meta-strip">
+              <span class="badge badge-crimson">SSC ২০২৬</span>
+              <span class="badge">পদার্থবিজ্ঞান</span>
+            </div>
+            <h3 class="product-title"><a href="#">SSC 2026 পদার্থবিজ্ঞান: গতি ও বল স্পেশাল শিট</a></h3>
+            <p class="product-excerpt">সংক্ষিপ্ত রিভিশন নোট, সকল সূত্রের প্রমাণ ও বোর্ড প্রশ্নের সমাধান।</p>
+            <div class="product-specs">
+              <span>পৃষ্ঠা: ৫৪</span>
+              <span>ফরম্যাট: PDF</span>
+              <span>সাইজ: ৪.২ MB</span>
+            </div>
+            <div class="product-price-row">
+              <div>
+                <span class="price-regular">৳ ১৮০</span>
+                <span class="price-current">৳ ৯৫</span>
+              </div>
+              <span class="badge badge-forest">৪৭% ছাড়</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-secondary" onclick="StoreEngine.addToCart('note-ssc-phy-01');">কার্টে রাখুন</button>
+              <button class="btn btn-primary" onclick="StoreEngine.triggerDownload('note-ssc-phy-01');">ডাউনলোড</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. DRAWN BROWSER PREVIEW (FOR READY-MADE WEBSITES) -->
+    <section class="section">
+      <h2>৮. ওয়েবসাইট টেমপ্লেট ড্রন ব্রাউজার প্রিভিউ ফ্রেম</h2>
+      <div class="browser-window" style="max-width: 600px;">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span class="browser-dot red"></span>
+            <span class="browser-dot yellow"></span>
+            <span class="browser-dot green"></span>
+          </div>
+          <div class="browser-address">https://coaching-academy.edu.bd</div>
+        </div>
+        <div class="browser-viewport">
+          <div style="background: #FFFFFF; border: 1px solid var(--rule-sand); padding: var(--space-4); text-align: center;">
+            <span class="badge badge-crimson" style="margin-bottom: var(--space-2);">লাইভ রেডি-মেড টেমপ্লেট</span>
+            <h3 style="font-size: var(--text-md); margin-bottom: var(--space-1);">উত্তরণ একাডেমি ও কোচিং সেন্টার</h3>
+            <p style="font-size: var(--text-xs); color: var(--slate-ink);">HTML5 + CSS3 + ভ্যানিলা জাভাস্ক্রিপ্ট • রেসপন্সিভ লেআউট</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span>জ্ঞানকোষ ডিজিটাল প্রেস — ফাউন্ডেশন ফেজ ৩ ভেরিফিকেশন সম্পন্ন</span>
+      <span>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var container = document.getElementById('sample-cover-container');
+      if (container && window.STORE_PRODUCTS && window.STORE_PRODUCTS[0]) {
+        container.innerHTML = StoreEngine.generateSvgCover(window.STORE_PRODUCTS[0], 320, 200);
+      }
+    });
+  </script>
+</body>
+</html>

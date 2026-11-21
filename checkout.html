@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নিরাপদ চেকআউট — জ্ঞানকোষ ডিজিটাল প্রেস</title>
+  <meta name="description" content="নিরাপদ মোবাইল চেকআউট। যোগাযোগ তথ্য ও পেমেন্ট TrxID প্রদান করে তাৎক্ষণিক ডাউনলোড লিংক সংগ্রহ করুন।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-top: var(--space-6);
+    }
+
+    @media (min-width: 900px) {
+      .checkout-layout {
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: var(--space-10);
+        align-items: start;
+      }
+    }
+
+    .checkout-form-card {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--rule-sand);
+      box-shadow: 2px 2px 0 var(--rule-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Mobile Wallet Payment Instructions Box */
+    .wallet-instructions-box {
+      background-color: var(--paper-dark);
+      border: 1px solid var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      padding: var(--space-4);
+      margin: var(--space-4) 0;
+    }
+
+    .account-highlight-card {
+      background: var(--paper-surface);
+      border: 2px solid var(--seal-crimson);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      margin: var(--space-3) 0;
+    }
+
+    .order-sidebar-card {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0 var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      padding: var(--space-6);
+    }
+
+    @media (min-width: 900px) {
+      .order-sidebar-card {
+        position: sticky;
+        top: 100px;
+      }
+    }
+
+    .order-item-mini {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) 0;
+      border-bottom: 1px dashed var(--rule-sand);
+      font-size: var(--text-xs);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#checkout-main" class="skip-link">মূল চেকআউট ফর্মে চলে যান</a>
+
+  <aside class="top-notice-bar" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <header class="site-header" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-header-btn" aria-label="শপিং ব্যাগে যান">
+          <span>ব্যাগ</span>
+          <span class="cart-badge-count" aria-live="polite">০</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="checkout-main" class="container section">
+    <div class="section-header">
+      <span class="section-eyebrow">নিরাপদ চেকআউট</span>
+      <h1 class="section-title">অর্ডার নিশ্চিতকরণ ও পেমেন্ট তথ্য</h1>
+      <p class="section-subtitle">আপনার যোগাযোগ তথ্য এবং মোবাইল ওয়ালেট TrxID প্রদান করে সরাসরি ডাউনলোড আনলক করুন।</p>
+    </div>
+
+    <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event);" novalidate>
+      <div class="checkout-layout">
+        <!-- Form Left Column: Contact + Wallet Guide -->
+        <div class="checkout-main-col">
+          <!-- Step 1: Customer Contact Details -->
+          <div class="checkout-form-card">
+            <h2 style="font-size:var(--text-md); margin-bottom:var(--space-2); color:var(--carbon-ink); border-bottom:1px solid var(--rule-sand); padding-bottom:var(--space-2);">
+              ১. আপনার যোগাযোগ তথ্য
+            </h2>
+            <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-bottom:var(--space-4);">
+              ডাউনলোড লিংক ব্যাকআপ ও জরুরি মেসেজের জন্য সঠিক মোবাইল নম্বর ও ইমেইল প্রদান করুন:
+            </p>
+
+            <div class="form-group" id="groupName">
+              <label class="form-label" for="custName">আপনার পুরো নাম <span class="required">*</span></label>
+              <input type="text" id="custName" class="input-control" placeholder="যেমন: তানভীর আহমেদ" required>
+              <span class="form-error-msg" id="errName">অনুগ্রহ করে আপনার পুরো নাম লিখুন।</span>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group" id="groupPhone">
+                <label class="form-label" for="custPhone">সক্রিয় মোবাইল নম্বর <span class="required">*</span></label>
+                <input type="tel" id="custPhone" class="input-control" placeholder="০১৭XXXXXXXX" required>
+                <span class="form-error-msg" id="errPhone">১১ ডিজিটের সঠিক মোবাইল নম্বর লিখুন (যেমন: ০১৭XXXXXXXX)।</span>
+              </div>
+
+              <div class="form-group" id="groupEmail">
+                <label class="form-label" for="custEmail">ইমেইল এড্রেস <span class="required">*</span></label>
+                <input type="email" id="custEmail" class="input-control" placeholder="example@gmail.com" required>
+                <span class="form-error-msg" id="errEmail">সঠিক ইমেইল ঠিকানা প্রদান করুন।</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Payment Method & Mobile Wallet Guide -->
+          <div class="checkout-form-card">
+            <h2 style="font-size:var(--text-md); margin-bottom:var(--space-2); color:var(--carbon-ink); border-bottom:1px solid var(--rule-sand); padding-bottom:var(--space-2);">
+              ২. মূল্য পরিশোধের পদ্ধতি (মোবাইল ওয়ালেট)
+            </h2>
+
+            <div class="wallet-instructions-box">
+              <p style="font-size:var(--text-xs); font-weight:700; color:var(--carbon-ink); margin-bottom:var(--space-2);">
+                স্টেপ-বাই-স্টেপ পেমেন্ট নির্দেশিকা:
+              </p>
+              <ol style="font-size:var(--text-xs); color:var(--slate-ink); line-height:1.7; padding-left:var(--space-4); margin-bottom:var(--space-3); list-style:decimal;">
+                <li>আপনার বিকাশ, নগদ বা রকেট মোবাইল অ্যাপ খুলুন অথবা ইউএসএসডি কোড ডায়াল করুন।</li>
+                <li>নিচে প্রদর্শিত নম্বরে <strong>Send Money</strong> অপশন নির্বাচন করে নির্ধারিত সর্বমোট টাকা পাঠান।</li>
+                <li>লেনদেন সফল হলে প্রাপ্ত ফিরতি এসএমএস থেকে <strong>Transaction ID (TrxID)</strong> কপি করুন।</li>
+                <li>নিচের বক্সে আপনার প্রেরক নম্বর ও TrxID লিখে 'অর্ডার নিশ্চিত করুন' বাটনে ক্লিক করুন।</li>
+              </ol>
+
+              <!-- Modern Account Highlight FinTech Card -->
+              <div class="account-highlight-card" style="background:#FFFFFF; border:2px solid var(--seal-crimson); padding:var(--space-4); border-radius:var(--radius-md); box-shadow:0 4px 15px rgba(220,38,38,0.12); margin:var(--space-4) 0;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-2);">
+                  <span style="font-size:var(--text-xs); color:var(--slate-ink); font-weight:700;">মোবাইল ওয়ালেট নম্বর (Send Money):</span>
+                  <span class="badge badge-crimson">সরাসরি ওয়ালেট পেমেন্ট</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3); background:var(--paper-subtle); padding:var(--space-2) var(--space-4); border-radius:var(--radius-sm); border:1px solid var(--rule-sand-subtle);">
+                  <span class="font-mono" id="walletNumDisp" style="font-size:var(--text-xl); font-weight:800; color:var(--carbon-ink); letter-spacing:0.05em;">০১৯৯২২৯৩৪৫১</span>
+                  <button type="button" class="btn btn-secondary" onclick="copyWalletNumber(this);" style="min-height:34px; padding:2px 12px; font-size:var(--text-xs); border-radius:var(--radius-full);">
+                    📋 নম্বর কপি করুন
+                  </button>
+                </div>
+                <div style="display:flex; gap:var(--space-2); margin-top:var(--space-2); font-size:0.6875rem; color:var(--faint-ink);">
+                  <span>✓ বিকাশ</span> • <span>✓ নগদ</span> • <span>✓ রকেট</span> • <span>✓ ২৪/৭ সক্রিয়</span>
+                </div>
+              </div>
+
+              <p style="font-size:var(--text-xs); color:var(--slate-ink); margin:0;">
+                <em>(নোট: চেকআউট সম্পূর্ণ সিমুলেটেড। সঠিক ফরমেটের TrxID সাবমিট করলেই স্ক্রিনে সাথে সাথে ডাউনলোড শুরু হবে এবং আপনার ডিভাইসের লাইব্রেরিতে যুক্ত হবে।)</em>
+              </p>
+            </div>
+
+            <!-- Transaction Input Fields -->
+            <div class="grid-2" style="margin-top:var(--space-4);">
+              <div class="form-group" id="groupSender">
+                <label class="form-label" for="senderWallet">যে নম্বর থেকে টাকা পাঠিয়েছেন <span class="required">*</span></label>
+                <input type="tel" id="senderWallet" class="input-control" placeholder="০১৭XXXXXXXX" required>
+                <span class="form-error-msg" id="errSender">টাকা পাঠানোর নম্বরটি প্রদান করুন।</span>
+              </div>
+
+              <div class="form-group" id="groupTrxId">
+                <label class="form-label" for="trxId">Transaction ID (TrxID) <span class="required">*</span></label>
+                <input type="text" id="trxId" class="input-control" placeholder="যেমন: 8N7A6B5C4D" style="text-transform:uppercase;" required>
+                <span class="form-error-msg" id="errTrxId">সঠিক Transaction ID লিখুন (কমপক্ষে ৮ অক্ষর)।</span>
+              </div>
+            </div>
+
+            <!-- Terms Agreement Checkbox -->
+            <div class="form-group" id="groupTerms" style="margin-top:var(--space-3);">
+              <label class="filter-label-chip" style="font-size:var(--text-xs); line-height:1.5;">
+                <input type="checkbox" id="agreeTerms" required>
+                <span>আমি জ্ঞানকোষ ডিজিটাল প্রেসের <a href="support.html#refund" target="_blank">ডাউনলোড ও রিফান্ড নীতিমালার</a> সাথে একমত পোষণ করছি।</span>
+              </label>
+              <span class="form-error-msg" id="errTerms">অর্ডার নিশ্চিত করতে ডাউনলোড ও রিফান্ড নীতিমালায় টিক দিন।</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Right Column: Order Summary -->
+        <aside class="order-sidebar-card" aria-label="অর্ডার সংক্ষেপ">
+          <h2 style="font-size:var(--text-md); margin-bottom:var(--space-3); color:var(--carbon-ink); border-bottom:1px solid var(--rule-sand); padding-bottom:var(--space-2);">
+            অর্ডার সংক্ষেপ
+          </h2>
+
+          <div id="checkoutItemsList" style="margin-bottom:var(--space-4);">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="summary-line">
+            <span>পণ্য মূল্য:</span>
+            <span id="checkoutSubtotal" style="font-weight:700;">৳ ০</span>
+          </div>
+
+          <div class="summary-line" id="checkoutCouponRow" style="display:none; color:var(--success-forest);">
+            <span>কুপন ডিসকাউন্ট:</span>
+            <span id="checkoutCouponDiscount" style="font-weight:700;">- ৳ ০</span>
+          </div>
+
+          <div class="summary-line">
+            <span>ডেলিভারি চার্জ:</span>
+            <span style="font-weight:700; color:var(--success-forest);">৳ ০ (ডিজিটাল ডেলিভারি)</span>
+          </div>
+
+          <div class="summary-total">
+            <span>মোট প্রদেয় মূল্য:</span>
+            <span id="checkoutFinalTotal" style="color:var(--seal-crimson); font-size:var(--text-2xl);">৳ ০</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btnConfirmOrder" style="margin-top:var(--space-6); font-size:var(--text-md); padding:var(--space-3);">
+            অর্ডার নিশ্চিত করুন
+          </button>
+
+          <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-top:var(--space-3); text-align:center; line-height:1.5;">
+            🔒 অর্ডার নিশ্চিত হওয়ার পরপরই সরাসরি ডাউনলোড বাটন প্রদর্শিত হবে।
+          </p>
+        </aside>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-wordmark" style="margin-bottom:var(--space-3);">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </a>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ডে প্রস্তুতকৃত ডিজিটাল নোট, গাইড এবং ওয়েব টেমপ্লেটের বিশ্বস্ত কেন্দ্র।
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">ক্যাটালগ</h3>
+        <ul>
+          <li><a href="shop.html?class=ssc">নবম-দশম (SSC)</a></li>
+          <li><a href="shop.html?class=hsc">একাদশ-দ্বাদশ (HSC)</a></li>
+          <li><a href="shop.html?class=admission">ভর্তি পরীক্ষা</a></li>
+          <li><a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">গুরুত্বপূর্ণ লিংক</h3>
+        <ul>
+          <li><a href="library.html">আমার লাইব্রেরি</a></li>
+          <li><a href="support.html">সহায়তা ও প্রশ্নোত্তর</a></li>
+          <li><a href="support.html#refund">রিফান্ড নীতিমালা</a></li>
+          <li><a href="support.html#license">লাইসেন্সিং শর্তাবলী</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">যোগাযোগ ও ঠিকানা</h3>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ফোন ও WhatsApp:</strong><br>
+          <a href="https://wa.me/8801902607406" style="color:var(--carbon-ink); font-weight:700;">০১৯০২৬০৭৪০৬</a>
+        </p>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ইমেইল:</strong> ishanxczs@gmail.com
+        </p>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)
+        </p>
+        <div style="margin-top:var(--space-3); display:flex; gap:var(--space-2);">
+          <a href="https://www.tiktok.com/@its_ishan_17?_r=1&_t=ZS-9BT1d8s78pp" target="_blank" rel="noopener noreferrer" class="badge" aria-label="TikTok প্রোফাইল">TikTok</a>
+          <a href="https://www.instagram.com/ishanxczs26?avpt=c2IxeW9yY2x2ejlz" target="_blank" rel="noopener noreferrer" class="badge" aria-label="Instagram প্রোফাইল">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>কোনো অপ্রয়োজনীয় ট্র্যাকার বা কুকি নেই • অতি হালকা ও মোবাইল ফ্রেন্ডলি</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    function renderCheckoutSummary() {
+      var cart = StoreEngine.getCart();
+      if (cart.length === 0) {
+        // Redirect to shop if empty
+        window.location.href = 'shop.html';
+        return;
+      }
+
+      var itemsList = document.getElementById('checkoutItemsList');
+      var html = '';
+      for (var i = 0; i < cart.length; i++) {
+        var it = cart[i];
+        html += [
+          '<div class="order-item-mini">',
+          '  <div>',
+          '    <strong>' + it.title + '</strong><br>',
+          '    <span style="color:var(--slate-ink);">' + it.classLabel + ' • ' + it.format + '</span>',
+          '  </div>',
+          '  <span style="font-weight:700; white-space:nowrap;">' + StoreEngine.formatPrice(it.priceSale) + '</span>',
+          '</div>'
+        ].join('\n');
+      }
+      itemsList.innerHTML = html;
+
+      var subtotal = StoreEngine.getCartSubtotal();
+      var couponDiscount = StoreEngine.getCouponDiscount();
+      var finalTotal = StoreEngine.getCartFinalTotal();
+
+      document.getElementById('checkoutSubtotal').textContent = StoreEngine.formatPrice(subtotal);
+      document.getElementById('checkoutFinalTotal').textContent = StoreEngine.formatPrice(finalTotal);
+
+      var couponRow = document.getElementById('checkoutCouponRow');
+      if (couponDiscount > 0) {
+        couponRow.style.display = 'flex';
+        document.getElementById('checkoutCouponDiscount').textContent = '- ' + StoreEngine.formatPrice(couponDiscount);
+      } else {
+        couponRow.style.display = 'none';
+      }
+
+      document.getElementById('btnConfirmOrder').textContent = 'অর্ডার নিশ্চিত করুন (' + StoreEngine.formatPrice(finalTotal) + ')';
+    }
+
+    function handleCheckoutSubmit(e) {
+      e.preventDefault();
+
+      var nameInput = document.getElementById('custName');
+      var phoneInput = document.getElementById('custPhone');
+      var emailInput = document.getElementById('custEmail');
+      var senderInput = document.getElementById('senderWallet');
+      var trxInput = document.getElementById('trxId');
+      var termsInput = document.getElementById('agreeTerms');
+
+      var isValid = true;
+
+      // Validate Name
+      if (!nameInput.value.trim()) {
+        document.getElementById('groupName').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupName').classList.remove('has-error');
+      }
+
+      // Validate Phone (11 digits roughly)
+      var phoneRegex = /^01[3-9]\d{8}$/;
+      var cleanPhone = phoneInput.value.replace(/[^0-9]/g, '');
+      if (!phoneRegex.test(cleanPhone)) {
+        document.getElementById('groupPhone').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupPhone').classList.remove('has-error');
+      }
+
+      // Validate Email
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        document.getElementById('groupEmail').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupEmail').classList.remove('has-error');
+      }
+
+      // Validate Sender Wallet
+      if (!senderInput.value.trim()) {
+        document.getElementById('groupSender').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupSender').classList.remove('has-error');
+      }
+
+      // Validate TrxID (at least 6-8 chars)
+      var cleanTrx = trxInput.value.trim();
+      if (cleanTrx.length < 6) {
+        document.getElementById('groupTrxId').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupTrxId').classList.remove('has-error');
+      }
+
+      // Validate Terms Checkbox
+      if (!termsInput.checked) {
+        document.getElementById('groupTerms').classList.add('has-error');
+        isValid = false;
+      } else {
+        document.getElementById('groupTerms').classList.remove('has-error');
+      }
+
+      if (!isValid) {
+        StoreEngine.showToast('অনুগ্রহ করে লাল চিহ্নিত ঘরগুলো সঠিকভাবে পূরণ করুন।', 'error');
+        return;
+      }
+
+      // Create Order Record
+      var cart = StoreEngine.getCart();
+      var orderId = 'GKP-' + Math.floor(100000 + Math.random() * 900000);
+      var orderData = {
+        orderId: orderId,
+        date: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }),
+        customerName: nameInput.value.trim(),
+        customerPhone: phoneInput.value.trim(),
+        customerEmail: emailInput.value.trim(),
+        senderWallet: senderInput.value.trim(),
+        trxId: cleanTrx.toUpperCase(),
+        items: cart,
+        totalPaid: StoreEngine.getCartFinalTotal()
+      };
+
+      // Record in device persistent library
+      StoreEngine.recordPurchase(orderData);
+
+      // Store current order for confirmation receipt display
+      StoreEngine.storage.set('gkp_last_order', orderData);
+
+      // Clear Cart
+      StoreEngine.clearCart();
+
+      // Navigate to Order Confirmation
+      window.location.href = 'order-confirmation.html?orderId=' + orderId;
+    }
+
+    function copyWalletNumber(btn) {
+      var rawNumber = '01992293451';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(rawNumber).then(function() {
+          showCopySuccess(btn);
+        }).catch(function() {
+          showCopySuccess(btn);
+        });
+      } else {
+        showCopySuccess(btn);
+      }
+    }
+
+    function showCopySuccess(btn) {
+      if (!btn) return;
+      var orig = btn.textContent;
+      btn.textContent = '✓ কপি হয়েছে!';
+      btn.classList.add('btn-primary');
+      btn.classList.remove('btn-secondary');
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-secondary');
+      }, 2000);
+      StoreEngine.showToast('ওয়ালেট নম্বর ০১৯৯২২৯৩৪৫১ ক্লিপবোর্ডে কপি হয়েছে।', 'success');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCheckoutSummary();
+    });
+  </script>
+</body>
+</html>

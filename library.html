@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার লাইব্রেরি — জ্ঞানকোষ ডিজিটাল প্রেস</title>
+  <meta name="description" content="আপনার ডিভাইসে পূর্বে ক্রয়কৃত সকল ডিজিটাল নোট ও ই-বুক। যেকোনো সময় আজীবন ফ্রিতে পুনরায় ডাউনলোড করুন।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .library-banner-card {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0 var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      padding: var(--space-6);
+      margin-bottom: var(--space-8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#library-main" class="skip-link">মূল লাইব্রেরিতে চলে যান</a>
+
+  <aside class="top-notice-bar" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <header class="site-header" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html" class="active" aria-current="page">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-header-btn" aria-label="শপিং ব্যাগে যান">
+          <span>ব্যাগ</span>
+          <span class="cart-badge-count" aria-live="polite">০</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="মেনু খুলুন" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন মেনু">
+    <div class="mobile-drawer-content">
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="মেনু বন্ধ করুন">✕ বন্ধ করুন</button>
+      <nav aria-label="মোবাইল লিঙ্কসমূহ">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+      <div style="margin-top:auto; font-size:var(--text-xs); color:var(--slate-ink);">
+        <p>সরাসরি যোগাযোগ: ০১৯০২৬০৭৪০৬</p>
+        <p>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল)</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="library-main" class="container section">
+    <div class="section-header">
+      <span class="section-eyebrow">আমার লাইব্রেরি</span>
+      <h1 class="section-title">এই ডিভাইসে সংরক্ষিত ডিজিটাল ফাইলসমূহ</h1>
+      <p class="section-subtitle">আপনি পূর্বে যতগুলো নোট বা বই কিনেছেন, সেগুলো নিচে সংরক্ষিত রয়েছে। কোনো ফাইল হারিয়ে গেলে পুনরায় বিনামূল্যে ডাউনলোড করুন।</p>
+    </div>
+
+    <!-- Explanation Banner -->
+    <div class="library-banner-card">
+      <div style="max-width:68ch;">
+        <span class="badge badge-forest" style="margin-bottom:var(--space-2);">✓ আজীবন ব্যাকআপ গ্যারান্টি</span>
+        <h2 style="font-size:var(--text-md); margin-bottom:var(--space-1); color:var(--carbon-ink);">আপনার এই ব্রাউজারে সংরক্ষিত লাইব্রেরি</h2>
+        <p style="font-size:var(--text-xs); color:var(--slate-ink); margin:0;">
+          ফোন স্টোরেজ খালি করার সময় যদি পিডিএফ মুছে যায়, তবে একই ব্রাউজার থেকে এই পাতা খুললেই আপনার ক্রয়কৃত ফাইলগুলো আনলক দেখতে পাবেন।
+        </p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-subtle" onclick="handleClearLibrary();" style="font-size:var(--text-xs); min-height:36px; padding:2px 8px; color:var(--slate-ink);">
+          🗑️ লাইব্রেরি মেমোরি মুছুন
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Library Grid -->
+    <div class="grid-catalog" id="libraryGrid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Empty Library Fallback -->
+    <div class="no-results-card" id="emptyLibraryBlock" style="display:none;">
+      <div style="font-size:3rem; margin-bottom:var(--space-2);">📂</div>
+      <h2 style="font-size:var(--text-xl); margin-bottom:var(--space-2); color:var(--carbon-ink);">এই ডিভাইসে এখনও কোনো ক্রয়কৃত ফাইল নেই</h2>
+      <p style="font-size:var(--text-base); color:var(--slate-ink); max-width:48ch; margin:0 auto var(--space-4);">
+        আপনি যখনই কোনো ডিজিটাল নোট, ই-বুক বা ওয়েবসাইট টেমপ্লেট কিনবেন, তা স্বয়ংক্রিয়ভাবে আপনার এই নিজস্ব লাইব্রেরিতে যুক্ত হবে।
+      </p>
+      <a href="shop.html" class="btn btn-primary">ক্যাটালগ ঘুরে দেখুন</a>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-wordmark" style="margin-bottom:var(--space-3);">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </a>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ডে প্রস্তুতকৃত ডিজিটাল নোট, গাইড এবং ওয়েব টেমপ্লেটের বিশ্বস্ত কেন্দ্র।
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">ক্যাটালগ</h3>
+        <ul>
+          <li><a href="shop.html?class=ssc">নবম-দশম (SSC)</a></li>
+          <li><a href="shop.html?class=hsc">একাদশ-দ্বাদশ (HSC)</a></li>
+          <li><a href="shop.html?class=admission">ভর্তি পরীক্ষা</a></li>
+          <li><a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">গুরুত্বপূর্ণ লিংক</h3>
+        <ul>
+          <li><a href="library.html">আমার লাইব্রেরি</a></li>
+          <li><a href="support.html">সহায়তা ও প্রশ্নোত্তর</a></li>
+          <li><a href="support.html#refund">রিফান্ড নীতিমালা</a></li>
+          <li><a href="support.html#license">লাইসেন্সিং শর্তাবলী</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">যোগাযোগ ও ঠিকানা</h3>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ফোন ও WhatsApp:</strong><br>
+          <a href="https://wa.me/8801902607406" style="color:var(--carbon-ink); font-weight:700;">০১৯০২৬০৭৪০৬</a>
+        </p>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ইমেইল:</strong> ishanxczs@gmail.com
+        </p>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)
+        </p>
+        <div style="margin-top:var(--space-3); display:flex; gap:var(--space-2);">
+          <a href="https://www.tiktok.com/@its_ishan_17?_r=1&_t=ZS-9BT1d8s78pp" target="_blank" rel="noopener noreferrer" class="badge" aria-label="TikTok প্রোফাইল">TikTok</a>
+          <a href="https://www.instagram.com/ishanxczs26?avpt=c2IxeW9yY2x2ejlz" target="_blank" rel="noopener noreferrer" class="badge" aria-label="Instagram প্রোফাইল">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>কোনো অপ্রয়োজনীয় ট্র্যাকার বা কুকি নেই • অতি হালকা ও মোবাইল ফ্রেন্ডলি</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    function renderLibraryView() {
+      var library = StoreEngine.getLibrary();
+      var grid = document.getElementById('libraryGrid');
+      var emptyBlock = document.getElementById('emptyLibraryBlock');
+
+      if (library.length === 0) {
+        grid.style.display = 'none';
+        emptyBlock.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      emptyBlock.style.display = 'none';
+
+      var html = '';
+      for (var i = 0; i < library.length; i++) {
+        var it = library[i];
+        var product = StoreEngine.getProductById(it.id) || it;
+
+        html += [
+          '<article class="product-card">',
+          '  <div class="product-cover-wrap">' + StoreEngine.generateSvgCover(product, 320, 180) + '</div>',
+          '  <div class="product-body">',
+          '    <div class="product-meta-strip">',
+          '      <span class="badge badge-forest">✓ ক্রয়কৃত</span>',
+          '      <span class="badge">' + it.format + '</span>',
+          '    </div>',
+          '    <h3 class="product-title">' + it.title + '</h3>',
+          '    <div class="product-specs" style="margin-bottom:var(--space-4);">',
+          '      <span>সাইজ: ' + it.fileSize + '</span>',
+          '      <span>অর্ডার: #' + (it.orderId || 'GKP') + '</span>',
+          '    </div>',
+          '    <button type="button" class="btn btn-primary btn-block" onclick="StoreEngine.triggerDownload(\'' + it.id + '\');">',
+          '      📥 পুনরায় ডাউনলোড করুন',
+          '    </button>',
+          '  </div>',
+          '</article>'
+        ].join('\n');
+      }
+      grid.innerHTML = html;
+    }
+
+    function handleClearLibrary() {
+      if (confirm('আপনি কি নিশ্চিত যে এই ব্রাউজারে সংরক্ষিত লাইব্রেরি মেমোরি মুছে ফেলতে চান?')) {
+        StoreEngine.clearLibrary();
+        renderLibraryView();
+        StoreEngine.showToast('লাইব্রেরি মেমোরি সাফ করা হয়েছে।', 'info');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderLibraryView();
+
+      // Mobile Menu
+      var menuBtn = document.getElementById('mobileMenuBtn');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeBtn = document.getElementById('mobileDrawerClose');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', function() {
+          drawer.classList.add('open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        });
+      }
+      if (closeBtn && drawer && menuBtn) {
+        closeBtn.addEventListener('click', function() {
+          drawer.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>গ্রাহক সহায়তা, প্রশ্নোত্তর ও ব্যবহারের শর্তাবলী — জ্ঞানকোষ প্রেস</title>
+  <meta name="description" content="সরাসরি ফোন ও হোয়াটসঅ্যাপ সহায়তা, সাধারণ প্রশ্নোত্তর, রিফান্ড নীতিমালা এবং ডিজিটাল লাইসেন্সিং শর্তাবলী।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .contact-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    @media (min-width: 600px) {
+      .contact-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .contact-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .contact-box {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-5);
+      box-shadow: 2px 2px 0 var(--rule-sand);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .policy-card {
+      background-color: var(--paper-surface);
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-6);
+      margin-top: var(--space-6);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#support-main" class="skip-link">মূল কন্টেন্টে চলে যান</a>
+
+  <aside class="top-notice-bar" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <header class="site-header" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html" class="active" aria-current="page">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-header-btn" aria-label="শপিং ব্যাগে যান">
+          <span>ব্যাগ</span>
+          <span class="cart-badge-count" aria-live="polite">০</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="মেনু খুলুন" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন মেনু">
+    <div class="mobile-drawer-content">
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="মেনু বন্ধ করুন">✕ বন্ধ করুন</button>
+      <nav aria-label="মোবাইল লিঙ্কসমূহ">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+      <div style="margin-top:auto; font-size:var(--text-xs); color:var(--slate-ink);">
+        <p>সরাসরি যোগাযোগ: ০১৯০২৬০৭৪০৬</p>
+        <p>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল)</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="support-main" class="container container-narrow section">
+    <div class="section-header">
+      <span class="section-eyebrow">গ্রাহক সহায়তা ও সেবা</span>
+      <h1 class="section-title">আমরা আপনাকে সহযোগিতা করতে প্রস্তুত</h1>
+      <p class="section-subtitle">পেমেন্ট, ডাউনলোড সমস্যা বা যেকোনো জিজ্ঞাসা থাকলে আমাদের সরাসরি কল করুন অথবা হোয়াটসঅ্যাপে মেসেজ পাঠান।</p>
+    </div>
+
+    <!-- Contact Channels Grid -->
+    <div class="contact-card-grid">
+      <div class="contact-box">
+        <div>
+          <span class="badge badge-crimson" style="margin-bottom:var(--space-2);">তাত্ক্ষণিক মেসেজ</span>
+          <h2 style="font-size:var(--text-md); margin-bottom:var(--space-1); color:var(--carbon-ink);">WhatsApp সহায়তা</h2>
+          <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-bottom:var(--space-4);">যেকোনো প্রশ্ন বা পেমেন্ট স্ক্রিনশট পাঠিয়ে দ্রুত সমাধান পান।</p>
+        </div>
+        <a href="https://wa.me/8801902607406" class="btn btn-primary btn-block">হোয়াটসঅ্যাপে মেসেজ দিন</a>
+      </div>
+
+      <div class="contact-box">
+        <div>
+          <span class="badge" style="margin-bottom:var(--space-2); background:var(--paper-dark);">ভয়েস কল</span>
+          <h2 style="font-size:var(--text-md); margin-bottom:var(--space-1); color:var(--carbon-ink);">সরাসরি ফোন কল</h2>
+          <p class="font-mono" style="font-size:var(--text-md); font-weight:800; color:var(--carbon-ink); margin-bottom:var(--space-1);">০১৯০২৬০৭৪০৬</p>
+          <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-bottom:var(--space-4);">জরুরি প্রয়োজনে সরাসরি আমাদের সাথে কথা বলুন।</p>
+        </div>
+        <a href="tel:01902607406" class="btn btn-secondary btn-block">সরাসরি কল করুন</a>
+      </div>
+
+      <div class="contact-box">
+        <div>
+          <span class="badge" style="margin-bottom:var(--space-2); background:var(--paper-dark);">অফিসিয়াল ইমেইল</span>
+          <h2 style="font-size:var(--text-md); margin-bottom:var(--space-1); color:var(--carbon-ink);">ইমেইল যোগাযোগ</h2>
+          <p style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--carbon-ink); margin-bottom:var(--space-1);">ishanxczs@gmail.com</p>
+          <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-bottom:var(--space-4);">ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)</p>
+        </div>
+        <a href="mailto:ishanxczs@gmail.com" class="btn btn-subtle btn-block">ইমেইল পাঠান</a>
+      </div>
+    </div>
+
+    <!-- Verified Social Media (Strictly TikTok & Instagram per Brief) -->
+    <div style="background-color:var(--paper-surface); border:1px solid var(--rule-sand); padding:var(--space-4); border-radius:var(--radius-sm); margin-bottom:var(--space-8); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--space-3);">
+      <div>
+        <h3 style="font-size:var(--text-sm); margin-bottom:2px; color:var(--carbon-ink);">আমাদের অফিসিয়াল সোশ্যাল মিডিয়া চ্যানেল:</h3>
+        <p style="font-size:var(--text-xs); color:var(--slate-ink); margin:0;">নতুন নোটের আপডেট ও পরীক্ষার টিপস পেতে আমাদের প্রোফাইল ফলো করুন:</p>
+      </div>
+      <div style="display:flex; gap:var(--space-2);">
+        <a href="https://www.tiktok.com/@its_ishan_17?_r=1&_t=ZS-9BT1d8s78pp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height:36px; padding:2px 12px; font-size:var(--text-xs);">
+          TikTok: @its_ishan_17
+        </a>
+        <a href="https://www.instagram.com/ishanxczs26?avpt=c2IxeW9yY2x2ejlz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height:36px; padding:2px 12px; font-size:var(--text-xs);">
+          Instagram: @ishanxczs26
+        </a>
+      </div>
+    </div>
+
+    <!-- Frequently Asked Questions -->
+    <section class="section" style="padding-top:0;">
+      <div class="section-header">
+        <span class="section-eyebrow">প্রশ্নোত্তর</span>
+        <h2 class="section-title">সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-summary">পেমেন্ট সম্পন্ন করার পর আমি ফাইল কীভাবে পাব?</summary>
+          <div class="faq-content">
+            বিকাশ বা নগদ থেকে নির্ধারিত নম্বরে (০১৯৯২২৯৩৪৫১) টাকা পাঠানোর পর প্রাপ্ত TrxID চেকআউট ফর্মে সাবমিট করলেই স্ক্রিনে সরাসরি ডাউনলোড লিংক উন্মুক্ত হবে। এছাড়াও আপনার ফোনের ব্রাউজারে 'আমার লাইব্রেরি' ট্যাবে ক্লিক করলে কেনা ফাইল আজীবন সংরক্ষিত থাকবে।
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">আমার ফোন থেকে যদি ফাইল মুছে যায়, আবার কি টাকা দিতে হবে?</summary>
+          <div class="faq-content">
+            একদমই না! একই ফোন বা ব্রাউজার থেকে 'আমার লাইব্রেরি' পেজে ঢুকলে আপনি যতবার ইচ্ছা সম্পূর্ণ বিনামূল্যে পুনরায় ডাউনলোড করতে পারবেন। কোনো অতিরিক্ত ফি লাগবে না।
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">নোটগুলো কি ফোনে পড়া যাবে নাকি প্রিন্ট করতে হবে?</summary>
+          <div class="faq-content">
+            দুটোই সম্ভব। আমাদের প্রতিটি ফাইল ভেক্টর ফরম্যাটে প্রস্তুত করা, ফলে ছোট মোবাইল স্ক্রিনে পড়লেও লেখা একদম স্পষ্ট থাকে এবং যেকোনো কম্পিউটারের দোকান থেকে পরিষ্কারভাবে প্রিন্টও করা যায়।
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">ওয়েবসাইট টেমপ্লেট ব্যবহারের নিয়ম কী?</summary>
+          <div class="faq-content">
+            প্রতিটি ওয়েবসাইট টেমপ্লেট একটি সিঙ্গেল-সাইট কমার্শিয়াল লাইসেন্সে দেওয়া হয়। জিপ ফাইল আনজিপ করে আপনার ব্রাউজারে index.html ওপেন করলেই চলবে। ছবি ও লেখা পরিবর্তন করার জন্য প্যাকেজের সাথে স্পষ্ট বাংলা নির্দেশিকা ফাইল দেওয়া থাকে।
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">টাকা পাঠিয়েছি কিন্তু ডাউনলোড লিংক আসেনি—এখন কী করব?</summary>
+          <div class="faq-content">
+            কোনো প্রযুক্তিগত সমস্যার কারণে পৃষ্ঠা বন্ধ হয়ে গেলে তৎক্ষণাৎ আমাদের হোয়াটসঅ্যাপ নম্বরে (০১৯০২৬০৭৪০৬) আপনার প্রেরক নম্বর ও TrxID পাঠিয়ে মেসেজ দিন। আমাদের টিম যাচাই করে দ্রুত ফাইল নিশ্চিত করবে।
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Formal Refund Policy -->
+    <section class="policy-card" id="refund">
+      <span class="badge badge-crimson" style="margin-bottom:var(--space-2);">স্বচ্ছ নীতিমালা</span>
+      <h2 style="font-size:var(--text-lg); margin-bottom:var(--space-2); color:var(--carbon-ink);">ডাউনলোড ও রিফান্ড নীতিমালা</h2>
+      <p style="font-size:var(--text-sm); color:var(--slate-ink); line-height:1.7; margin-bottom:var(--space-3);">
+        জ্ঞানকোষ ডিজিটাল প্রেস সম্পূর্ণ সততা ও স্বচ্ছতায় বিশ্বাসী। যেহেতু এগুলো ডিজিটাল পণ্য এবং ক্রয়ের পরপরই ফাইল গ্রাহকের ডিভাইসে সরাসরি পৌঁছে যায়, তাই ফাইল ডাউনলোড হওয়ার পর কোনো প্রকার ক্যাশ রিফান্ড প্রদান করা সম্ভব নয়।
+      </p>
+      <p style="font-size:var(--text-sm); color:var(--slate-ink); line-height:1.7; margin:0;">
+        তবে ফাইলে কোনো টেকনিক্যাল ত্রুটি, নষ্ট পাতা বা ভুল সংস্করণ প্রমাণিত হলে ক্রয়ের <strong>২৪ ঘণ্টার মধ্যে</strong> আমাদের সাথে যোগাযোগ করলে আমরা অবিলম্বে সঠিক ফাইল প্রতিস্থাপন (Replacement) অথবা সমমূল্যের অন্য কোনো নোট বাছাইয়ের স্টোর ক্রেডিট প্রদান করব।
+      </p>
+    </section>
+
+    <!-- Copyright & Licensing Terms -->
+    <section class="policy-card" id="license">
+      <span class="badge" style="margin-bottom:var(--space-2); background:var(--paper-dark);">আইনি সত্ত্বাধিকার</span>
+      <h2 style="font-size:var(--text-lg); margin-bottom:var(--space-2); color:var(--carbon-ink);">কপিরাইট ও লাইসেন্সিং শর্তাবলী</h2>
+      <p style="font-size:var(--text-sm); color:var(--slate-ink); line-height:1.7; margin-bottom:var(--space-3);">
+        ১. <strong>নোট ও ই-বুক:</strong> প্রতিটি ক্রয়কৃত নোট ও ই-বুক শুধুমাত্র শিক্ষার্থীর ব্যক্তিগত অধ্যয়নের জন্য নির্ধারিত। কোনো বাণিজ্যিক পুনরুৎপাদন, পাইরেসি বা অনুমতি ব্যতীত অনলাইন গ্রুপে বিক্রয় করা কপিরাইট আইন অনুযায়ী দণ্ডনীয় অপরাধ।
+      </p>
+      <p style="font-size:var(--text-sm); color:var(--slate-ink); line-height:1.7; margin:0;">
+        ২. <strong>ওয়েবসাইট টেমপ্লেট:</strong> প্রতিটি টেমপ্লেট একটি একক ডোমেইন বা প্রজেক্ট ব্যবহারের সিঙ্গেল-সাইট লাইসেন্সে প্রদান করা হয়। টেমপ্লেটের মূল সোর্স কোড সরাসরি পুনর্বিক্রয় করা নিষিদ্ধ।
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu
+      var menuBtn = document.getElementById('mobileMenuBtn');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeBtn = document.getElementById('mobileDrawerClose');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', function() {
+          drawer.classList.add('open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        });
+      }
+      if (closeBtn && drawer && menuBtn) {
+        closeBtn.addEventListener('click', function() {
+          drawer.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

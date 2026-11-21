@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার সম্পন্ন ও তাৎক্ষণিক ডাউনলোড — জ্ঞানকোষ প্রেস</title>
+  <meta name="description" content="আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে। ক্রয়কৃত ডিজিটাল ফাইলগুলো এখনই সরাসরি আপনার ডিভাইসে ডাউনলোড করুন।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .confirmation-card {
+      background-color: var(--paper-surface);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0 var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      padding: var(--space-8);
+      margin-top: var(--space-4);
+    }
+
+    .success-stamp-banner {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      border-bottom: 2px solid var(--rule-sand);
+      padding-bottom: var(--space-6);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .success-icon-seal {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--success-forest-subtle);
+      border: 2px solid var(--success-forest);
+      color: var(--success-forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Download Action Row */
+    .download-item-card {
+      background: var(--paper-base);
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    /* Printable Receipt Block */
+    .receipt-block {
+      background: #FFFFFF;
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-5);
+      margin-top: var(--space-8);
+      font-size: var(--text-sm);
+    }
+
+    @media print {
+      .site-header, .top-notice-bar, .site-footer, .no-print, .skip-link {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF;
+        color: #000000;
+      }
+      .confirmation-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#confirmation-main" class="skip-link">মূল কন্টেন্টে চলে যান</a>
+
+  <aside class="top-notice-bar no-print" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <header class="site-header no-print" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="library.html" class="btn btn-secondary" style="min-height:36px; padding:2px 10px; font-size:var(--text-xs);">
+          আমার লাইব্রেরি
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="confirmation-main" class="container container-narrow section">
+    <div class="confirmation-card">
+      <!-- Success Header Banner -->
+      <div class="success-stamp-banner">
+        <div class="success-icon-seal" aria-hidden="true">✓</div>
+        <div style="flex-grow:1;">
+          <span class="badge badge-forest" style="margin-bottom:var(--space-1);">পেমেন্ট ও অর্ডার যাচাইকৃত</span>
+          <h1 style="font-size:var(--text-xl); line-height:1.2; color:var(--carbon-ink); margin-bottom:var(--space-1);">
+            অভিনন্দন! আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে।
+          </h1>
+          <p style="font-size:var(--text-xs); color:var(--slate-ink); margin:0;">
+            অর্ডার নম্বর: <strong class="font-mono" id="dispOrderId" style="color:var(--carbon-ink);">#GKP-000000</strong> | তারিখ: <span id="dispOrderDate">২০২৬</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Instant Download Center -->
+      <div>
+        <h2 style="font-size:var(--text-md); margin-bottom:var(--space-3); color:var(--carbon-ink);">
+          আপনার ক্রয়কৃত ফাইলসমূহ এখনই ডাউনলোড করুন:
+        </h2>
+        <div id="downloadsListContainer">
+          <!-- Injected by JS -->
+        </div>
+
+        <div style="background:var(--success-forest-subtle); border:1px solid rgba(30,107,56,0.3); padding:var(--space-3); border-radius:var(--radius-sm); margin-top:var(--space-4); font-size:var(--text-xs); color:var(--success-forest); line-height:1.6;">
+          <strong>💡 ডাউনলোড নিরাপত্তা টিপস:</strong> ফাইলগুলো আপনার ডিভাইসের 'Downloads' ফোল্ডারে সেভ হবে। যদি কোনো ফাইল হারিয়ে যায়, এই ব্রাউজারে <a href="library.html" style="color:var(--success-forest); text-decoration:underline; font-weight:700;">'আমার লাইব্রেরি'</a> মেন্যুতে গেলে যেকোনো সময় সম্পূর্ণ ফ্রিতে পুনরায় ডাউনলোড করতে পারবেন।
+        </div>
+      </div>
+
+      <!-- Official Printable Receipt Summary -->
+      <div class="receipt-block">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--rule-sand); padding-bottom:var(--space-2); margin-bottom:var(--space-3);">
+          <span style="font-weight:700; color:var(--carbon-ink);">অফিসিয়াল ডিজিটাল পেমেন্ট রসিদ</span>
+          <button type="button" class="btn btn-subtle no-print" onclick="window.print();" style="min-height:32px; padding:2px 8px; font-size:var(--text-xs);">
+            🖨️ রসিদ প্রিন্ট করুন
+          </button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:var(--space-3); margin-bottom:var(--space-3);">
+          <div>
+            <span style="color:var(--slate-ink); font-size:var(--text-xs);">গ্রাহকের নাম:</span><br>
+            <strong id="receiptCustName" style="color:var(--carbon-ink);">-</strong>
+          </div>
+          <div>
+            <span style="color:var(--slate-ink); font-size:var(--text-xs);">মোবাইল নম্বর:</span><br>
+            <strong id="receiptCustPhone" class="font-mono">-</strong>
+          </div>
+          <div>
+            <span style="color:var(--slate-ink); font-size:var(--text-xs);">ইমেইল:</span><br>
+            <strong id="receiptCustEmail">-</strong>
+          </div>
+          <div>
+            <span style="color:var(--slate-ink); font-size:var(--text-xs);">পরিশোধের মাধ্যম ও TrxID:</span><br>
+            <strong id="receiptTrxId" class="font-mono">-</strong>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--rule-sand); padding-top:var(--space-2); display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:700;">পরিশোধিত সর্বমোট মূল্য:</span>
+          <span id="receiptTotalPaid" style="font-size:var(--text-lg); font-weight:800; color:var(--seal-crimson);">৳ ০</span>
+        </div>
+      </div>
+
+      <!-- Action Footer Links -->
+      <div class="no-print" style="margin-top:var(--space-6); display:flex; gap:var(--space-3); flex-wrap:wrap; justify-content:center;">
+        <a href="library.html" class="btn btn-secondary">আমার লাইব্রেরিতে যান</a>
+        <a href="shop.html" class="btn btn-subtle">আরও নোট ও বই ব্রাউজ করুন</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer no-print" role="contentinfo">
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var lastOrder = StoreEngine.storage.get('gkp_last_order', null);
+      var params = new URLSearchParams(window.location.search);
+      var orderId = params.get('orderId') || (lastOrder ? lastOrder.orderId : 'GKP-DEMO99');
+
+      document.getElementById('dispOrderId').textContent = '#' + orderId;
+      document.getElementById('dispOrderDate').textContent = lastOrder ? lastOrder.date : new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      var items = lastOrder && lastOrder.items ? lastOrder.items : [window.STORE_PRODUCTS[0]];
+
+      if (lastOrder) {
+        document.getElementById('receiptCustName').textContent = lastOrder.customerName;
+        document.getElementById('receiptCustPhone').textContent = lastOrder.customerPhone;
+        document.getElementById('receiptCustEmail').textContent = lastOrder.customerEmail;
+        document.getElementById('receiptTrxId').textContent = 'মোবাইল ওয়ালেট (TrxID: ' + lastOrder.trxId + ')';
+        document.getElementById('receiptTotalPaid').textContent = StoreEngine.formatPrice(lastOrder.totalPaid);
+      } else {
+        document.getElementById('receiptCustName').textContent = 'নমুনা শিক্ষার্থী';
+        document.getElementById('receiptCustPhone').textContent = '০১৭XXXXXXXX';
+        document.getElementById('receiptCustEmail').textContent = 'student@example.com';
+        document.getElementById('receiptTrxId').textContent = 'মোবাইল ওয়ালেট (TrxID: 8N7A6B5C4D)';
+        document.getElementById('receiptTotalPaid').textContent = StoreEngine.formatPrice(items[0].priceSale);
+      }
+
+      // Render Download Cards
+      var container = document.getElementById('downloadsListContainer');
+      var html = '';
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        html += [
+          '<div class="download-item-card">',
+          '  <div style="flex-grow:1; min-width:200px;">',
+          '    <span class="badge badge-crimson" style="font-size:0.625rem; margin-bottom:2px;">' + it.format + ' ফাইল</span>',
+          '    <h3 style="font-size:var(--text-sm); margin:0; color:var(--carbon-ink);">' + it.title + '</h3>',
+          '    <span style="font-size:var(--text-xs); color:var(--slate-ink);">' + it.classLabel + ' • সাইজ: ' + it.fileSize + '</span>',
+          '  </div>',
+          '  <div>',
+          '    <button type="button" class="btn btn-primary" onclick="triggerDirectDownload(\'' + it.id + '\');" style="min-height:40px; padding:var(--space-2) var(--space-4);">',
+          '      📥 ডাউনলোড করুন (' + it.format + ')',
+          '    </button>',
+          '  </div>',
+          '</div>'
+        ].join('\n');
+      }
+      container.innerHTML = html;
+    });
+
+    function triggerDirectDownload(productId) {
+      StoreEngine.triggerDownload(productId);
+    }
+  </script>
+</body>
+</html>

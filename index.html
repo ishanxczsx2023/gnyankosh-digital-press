@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>জ্ঞানকোষ ডিজিটাল প্রেস — বিশ্বস্ত ডিজিটাল নোট, ই-বুক ও ওয়েবসাইট</title>
+  <meta name="description" content="বাংলাদেশি শিক্ষার্থীদের জন্য জাতীয় শিক্ষাক্রম ২০২৬ অনুমোদিত নির্ভরযোগ্য ডিজিটাল নোট, পূর্ণাঙ্গ ই-বুক এবং রেডি-মেড ওয়েবসাইট টেমপ্লেট। ফোনে তাৎক্ষণিক ডাউনলোড।">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    /* Benchmark Section Custom Masthead Layout */
+    .hero-masthead {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-10);
+      background: linear-gradient(180deg, var(--paper-base) 0%, var(--paper-subtle) 100%);
+      border-bottom: 2px solid var(--rule-sand);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: var(--space-10);
+      }
+    }
+
+    .hero-tagline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-3);
+      background-color: var(--paper-surface);
+      border: 1px solid var(--carbon-ink);
+      box-shadow: 2px 2px 0 var(--carbon-ink);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--carbon-ink);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-headline {
+      font-size: var(--text-3xl);
+      line-height: var(--lh-heading);
+      font-weight: 800;
+      color: var(--carbon-ink);
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subhead {
+      font-size: var(--text-md);
+      line-height: var(--lh-body);
+      color: var(--slate-ink);
+      margin-bottom: var(--space-6);
+      max-width: 60ch;
+    }
+
+    /* Fast Class Selector Row */
+    .class-selector-strip {
+      margin-bottom: var(--space-6);
+    }
+
+    .class-selector-label {
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      color: var(--slate-ink);
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+      font-weight: 700;
+    }
+
+    .class-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .class-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--carbon-ink);
+      background-color: var(--paper-surface);
+      border: 1px solid var(--rule-sand);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      min-height: var(--touch-target);
+      transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .class-chip:hover {
+      border-color: var(--carbon-ink);
+      background-color: var(--paper-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Trust strip (concrete facts, zero false hype) */
+    .trust-fact-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+      border-top: 1px dashed var(--rule-sand);
+      padding-top: var(--space-4);
+      font-size: var(--text-xs);
+      color: var(--slate-ink);
+    }
+
+    @media (min-width: 540px) {
+      .trust-fact-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .trust-fact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-weight: 600;
+    }
+
+    .trust-fact-item::before {
+      content: "✓";
+      color: var(--success-forest);
+      font-weight: 800;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:site_name" content="জ্ঞানকোষ ডিজিটাল প্রেস">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bn_BD">
+</head>
+<body>
+  <a href="#benchmark-hero" class="skip-link">মূল কন্টেন্টে চলে যান</a>
+
+  <!-- Top Academic Notice Bar -->
+  <aside class="top-notice-bar" aria-label="জরুরি তথ্য বার">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <span>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ড</span>
+      <span>জরুরি সহায়তা: <a href="tel:01902607406">০১৯০২৬০৭৪০৬</a></span>
+    </div>
+  </aside>
+
+  <!-- Global Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-main">
+      <a href="index.html" class="brand-wordmark" aria-label="জ্ঞানকোষ ডিজিটাল প্রেস হোমপেজ">
+        <span class="brand-emblem" aria-hidden="true">জ্ঞ</span>
+        <span class="brand-title-wrap">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="প্রধান নেভিগেশন">
+        <a href="index.html" class="active" aria-current="page">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="cart.html" class="cart-header-btn" aria-label="শপিং ব্যাগে যান">
+          <span>ব্যাগ</span>
+          <span class="cart-badge-count" aria-live="polite">০</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="মেনু খুলুন" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন মেনু">
+    <div class="mobile-drawer-content">
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="মেনু বন্ধ করুন">✕ বন্ধ করুন</button>
+      <nav aria-label="মোবাইল লিঙ্কসমূহ">
+        <a href="index.html">হোম</a>
+        <a href="shop.html">নোট ও বই</a>
+        <a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a>
+        <a href="library.html">আমার লাইব্রেরি</a>
+        <a href="support.html">সহায়তা ও নীতিমালা</a>
+      </nav>
+      <div style="margin-top:auto; font-size:var(--text-xs); color:var(--slate-ink);">
+        <p>সরাসরি যোগাযোগ: ০১৯০২৬০৭৪০৬</p>
+        <p>ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল)</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="benchmark-hero">
+    <!-- ========================================================
+         PHASE 4: BENCHMARK SECTION (HOME FIRST SCREEN)
+         ======================================================== -->
+    <section class="hero-masthead">
+      <div class="container hero-grid">
+        <!-- Left Column: Core Value Proposition & Class Fast Selectors -->
+        <div class="hero-content">
+          <div class="hero-tagline-badge">
+            <span style="color:var(--seal-crimson);">●</span>
+            <span>মুদ্রিত মানের ডিজিটাল নোট ও সোর্স কোড</span>
+          </div>
+
+          <h1 class="hero-headline">
+            পড়ার টেবিলেই আসল প্রস্তুতি। স্পষ্ট, সংক্ষিপ্ত ও নির্ভরযোগ্য ডিজিটাল নোট।
+          </h1>
+
+          <p class="hero-subhead">
+            কোনো অস্পষ্ট ফটোকপি বা অপ্রয়োজনীয় বিজ্ঞাপন নয়। অভিজ্ঞ শিক্ষকদের তৈরি অধ্যায়ভিত্তিক নোট, পূর্ণাঙ্গ রেফারেন্স ই-বুক এবং রেডি-মেড ওয়েবসাইট টেমপ্লেট—সরাসরি আপনার ফোনে তাৎক্ষণিক ডাউনলোড।
+          </p>
+
+          <!-- Class Selector Chips -->
+          <div class="class-selector-strip">
+            <h2 class="class-selector-label">শ্রেণী অনুযায়ী দ্রুত বেছে নিন:</h2>
+            <div class="class-chips-row">
+              <a href="shop.html?class=ssc" class="class-chip">নবম-দশম (SSC)</a>
+              <a href="shop.html?class=hsc" class="class-chip">একাদশ-দ্বাদশ (HSC)</a>
+              <a href="shop.html?class=admission" class="class-chip">বিশ্ববিদ্যালয় ভর্তি</a>
+              <a href="shop.html?category=websites" class="class-chip">ওয়েবসাইট টেমপ্লেট</a>
+            </div>
+          </div>
+
+          <!-- Plain-Fact Trust Strip -->
+          <div class="trust-fact-strip">
+            <div class="trust-fact-item">তাৎক্ষণিক ডাউনলোড (PDF/ZIP)</div>
+            <div class="trust-fact-item">আমার লাইব্রেরিতে আজীবন ফ্রি</div>
+            <div class="trust-fact-item">বিকাশ ও নগদে সহজ পেমেন্ট</div>
+          </div>
+        </div>
+
+        <!-- Right Column: The ONE Memorable Thing (Live Interactive Bengali Press-Proof Viewer) -->
+        <div class="hero-proof-showcase">
+          <div class="proof-viewer-card" id="flagshipProofCard">
+            <div class="proof-header">
+              <div>
+                <h2 style="font-weight:700; font-size:var(--text-sm); line-height:1.2; margin:0; color:var(--carbon-ink);">চলতি সপ্তাহের স্পেশাল নোট</h2>
+                <span style="font-size:var(--text-xs); color:var(--slate-ink);">SSC 2026 পদার্থবিজ্ঞান: গতি ও বল</span>
+              </div>
+              <div class="proof-tabs" role="tablist" aria-label="নমুনা পাতা নির্বাচক">
+                <button class="proof-tab-btn active" role="tab" id="tab-p1" aria-selected="true" aria-controls="view-p1" onclick="switchProofPage(1)">নমুনা ১</button>
+                <button class="proof-tab-btn" role="tab" id="tab-p2" aria-selected="false" aria-controls="view-p2" onclick="switchProofPage(2)">নমুনা ২</button>
+                <button class="proof-tab-btn" role="tab" id="tab-p3" aria-selected="false" aria-controls="view-p3" onclick="switchProofPage(3)">নমুনা ৩</button>
+              </div>
+            </div>
+
+            <!-- Page 1 View: Table of Contents & Formula Summary -->
+            <div class="proof-sheet-viewport" id="view-p1" role="tabpanel" aria-labelledby="tab-p1">
+              <div class="proof-page-badge">পৃষ্ঠা ১/৫৪</div>
+              <div class="proof-margin-rule">
+                <span class="badge badge-crimson" style="margin-bottom:var(--space-2);">অধ্যায় ২ ও ৩ স্পেশাল সামারি</span>
+                <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2); color:var(--carbon-ink);">সূচিপত্র ও গতির সমীকরণ সারসংক্ষেপ</h3>
+                <p style="font-size:var(--text-xs); color:var(--slate-ink); margin-bottom:var(--space-3);">কেনার আগেই যাচাই করুন প্রতিটি অক্ষরের স্পষ্টতা ও সমীকরণের বিন্যাস:</p>
+                <div style="background:var(--paper-dark); border:1px solid var(--rule-sand); padding:var(--space-3); font-family:var(--font-mono); font-size:var(--text-xs); line-height:1.6; margin-bottom:var(--space-3);">
+                  ১. স্কেলার ও ভেক্টর রাশির পার্থক্য [পৃষ্ঠা ৩]<br>
+                  ২. গতির ৪টি মৌলিক সমীকরণ প্রমাণ [পৃষ্ঠা ৮]<br>
+                  ৩. লেখচিত্র (v-t ও s-t গ্রাফ) বিশ্লেষণ [পৃষ্ঠা ১৪]<br>
+                  ৪. ভরবেগ সংরক্ষণ সূত্র ও বন্দুকের পশ্চাৎবেগ [পৃষ্ঠা ২২]
+                </div>
+                <p style="font-size:var(--text-xs); color:var(--slate-ink);">✓ লেজার-শার্প ভেক্টর টাইপোগ্রাফি • জুম করলেও ফাটবে না</p>
+              </div>
+            </div>
+
+            <!-- Page 2 View: Equations & Trap Warning -->
+            <div class="proof-sheet-viewport" id="view-p2" role="tabpanel" aria-labelledby="tab-p2" style="display:none;">
+              <div class="proof-page-badge">পৃষ্ঠা ৯/৫৪</div>
+              <div class="proof-margin-rule">
+                <span class="badge badge-ochre" style="margin-bottom:var(--space-2);">বোর্ড পরীক্ষার কমন ফাঁদ</span>
+                <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2); color:var(--carbon-ink);">গতির সমীকরণসমূহের গানিতিক প্রয়োগ</h3>
+                <div style="background:var(--paper-dark); border:1px solid var(--rule-sand); padding:var(--space-3); font-family:var(--font-mono); font-size:var(--text-sm); line-height:1.7; margin-bottom:var(--space-3);">
+                  v = u + at<br>
+                  s = ((u + v) / 2) × t<br>
+                  s = ut + (1/2)at²<br>
+                  v² = u² + 2as
+                </div>
+                <p style="font-size:var(--text-xs); color:var(--seal-crimson); font-weight:700;">⚠ সতর্কতা: বস্তু খাড়া উপরের দিকে নিক্ষিপ্ত হলে a = -g (-৯.৮ m/s²) বসাতে হবে।</p>
+              </div>
+            </div>
+
+            <!-- Page 3 View: Board Exam Question Solution -->
+            <div class="proof-sheet-viewport" id="view-p3" role="tabpanel" aria-labelledby="tab-p3" style="display:none;">
+              <div class="proof-page-badge">পৃষ্ঠা ২৩/৫৪</div>
+              <div class="proof-margin-rule">
+                <span class="badge badge-forest" style="margin-bottom:var(--space-2);">বোর্ড প্রশ্ন নমুনা সমাধান</span>
+                <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2); color:var(--carbon-ink);">ঢাকা বোর্ড ২০২৫: বাঘ ও হরিণের গতি সমস্যা</h3>
+                <p style="font-size:var(--text-xs); margin-bottom:var(--space-2); color:var(--carbon-ink);"><strong>প্রশ্ন:</strong> একটি বাঘ ৫০ মিটার দূর থেকে সমত্বরণে হরিণকে তাড়া করলে হরিণটি ধরতে পারবে কি না?</p>
+                <div style="background:var(--paper-dark); border:1px solid var(--rule-sand); padding:var(--space-3); font-size:var(--text-xs); line-height:1.6; margin-bottom:var(--space-3);">
+                  বাঘের অতিক্রান্ত দূরত্ব: s₁ = (1/2)at²<br>
+                  হরিণের অতিক্রান্ত দূরত্ব: s₂ = vt + ৫০<br>
+                  শর্তমতে: s₁ = s₂ সমীকরণ সমাধান করে t = ৭.৫ সেকেন্ড। সুতরাং হরিণটিকে ধরতে পারবে।
+                </div>
+                <p style="font-size:var(--text-xs); color:var(--success-forest); font-weight:700;">✓ ধাপভিত্তিক পূর্ণ মার্কস পাওয়ার মতো লিখিত ফরম্যাট</p>
+              </div>
+            </div>
+
+            <!-- Action & Price Strip inside Proof Card -->
+            <div style="padding:var(--space-4); background:var(--paper-surface); border-top:1px solid var(--rule-sand); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3);">
+              <div>
+                <span class="price-regular">৳ ১৮০</span>
+                <span class="price-current" style="font-size:var(--text-xl);">৳ ৯৫</span>
+                <span class="badge badge-forest" style="margin-left:var(--space-1);">৪৭% সাশ্রয়</span>
+              </div>
+              <div style="display:flex; gap:var(--space-2);">
+                <button class="btn btn-secondary" id="heroAddToCartBtn" onclick="handleHeroAddToCart('note-ssc-phy-01');" aria-label="কার্টে যোগ করুন">কার্টে যোগ করুন</button>
+                <button class="btn btn-primary" onclick="quickBuy('note-ssc-phy-01');" aria-label="এখনই কিনুন">এখনই কিনুন</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Browse By Category & Class Level Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ক্যাটালগ ব্রাউজ</span>
+          <h2 class="section-title">শ্রেণী ও বিষয়ভিত্তিক ডিজিটাল সংগ্রহশালা</h2>
+          <p class="section-subtitle">আপনার পরীক্ষার প্রস্তুতিকে এগিয়ে নিতে বিষয় নির্বাচন করুন:</p>
+        </div>
+
+        <div class="grid-catalog" id="homeCategoryGrid">
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-crimson" style="align-self:flex-start; margin-bottom:var(--space-2);">বোর্ড পরীক্ষা</span>
+            <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-2);">নবম-দশম শ্রেণী (SSC)</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink); margin-bottom:var(--space-4);">পদার্থবিজ্ঞান, রসায়ন, সাধারণ গণিত, জীববিজ্ঞান ও বাংলা ২য় পত্রের অধ্যায়ভিত্তিক রিভিশন শিট ও গাণিতিক সমাধান।</p>
+            <a href="shop.html?class=ssc" class="btn btn-secondary btn-block">এসএসসি নোট দেখুন</a>
+          </div>
+
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-ochre" style="align-self:flex-start; margin-bottom:var(--space-2);">উচ্চমাধ্যমিক</span>
+            <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-2);">একাদশ-দ্বাদশ শ্রেণী (HSC)</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink); margin-bottom:var(--space-4);">উচ্চতর গণিত, পদার্থবিজ্ঞান, তথ্য ও যোগাযোগ প্রযুক্তি (ICT) এবং রসায়নের ক্যালকুলাস ও বিক্রিয়ার মেকানিজম নোট।</p>
+            <a href="shop.html?class=hsc" class="btn btn-secondary btn-block">এইচএসসি নোট দেখুন</a>
+          </div>
+
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-forest" style="align-self:flex-start; margin-bottom:var(--space-2);">ভর্তি পরীক্ষা</span>
+            <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-2);">বিশ্ববিদ্যালয় ভর্তি (Admission)</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink); margin-bottom:var(--space-4);">পাবলিক বিশ্ববিদ্যালয়, মেডিকেল ও ইঞ্জিনিয়ারিং ভর্তি পরীক্ষার জন্য ১০০% কমন উপযোগী গ্রামার ও সাধারণ জ্ঞান।</p>
+            <a href="shop.html?class=admission" class="btn btn-secondary btn-block">ভর্তি গাইড দেখুন</a>
+          </div>
+
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge" style="align-self:flex-start; margin-bottom:var(--space-2); background:var(--paper-dark);">সোর্স কোড</span>
+            <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-2);">রেডি-মেড ওয়েবসাইট</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink); margin-bottom:var(--space-4);">কোচিং সেন্টার, স্কুল-মাদরাসা, শিক্ষক পোর্টফোলিও এবং স্টুডেন্ট রেজুমের জন্য সম্পূর্ণ রেডি-টু-ইউজ HTML/CSS টেমপ্লেট।</p>
+            <a href="shop.html?category=websites" class="btn btn-secondary btn-block">ওয়েবসাইট টেমপ্লেট দেখুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Featured Products of the Season -->
+    <section class="section" style="background-color:var(--paper-subtle);">
+      <div class="container">
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:var(--space-3);">
+          <div>
+            <span class="section-eyebrow">জনপ্রিয় সংগ্রহ</span>
+            <h2 class="section-title">শিক্ষার্থীদের সর্বাধিক পঠিত ডিজিটাল নোট</h2>
+            <p class="section-subtitle">প্রতিটি নোটে রয়েছে নির্ভুল সমীকরণ, স্পষ্ট চিত্র ও বিগত বছরের বোর্ড প্রশ্ন বিশ্লেষণ।</p>
+          </div>
+          <a href="shop.html" class="btn btn-secondary">সব পণ্য দেখুন →</a>
+        </div>
+
+        <div class="grid-catalog" id="homeFeaturedGrid">
+          <!-- Dynamically populated by JS from STORE_PRODUCTS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Authentic Value Pillars (Why Gnyankosh Press) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">কেন জ্ঞানকোষ প্রেস</span>
+          <h2 class="section-title">ডিজিটাল পণ্যে শতভাগ সততা ও নির্ভরযোগ্যতা</h2>
+          <p class="section-subtitle">শিক্ষার্থী ও অভিভাবকদের মানসিক শান্তি নিশ্চিত করতে আমাদের প্রতিশ্রুতি:</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-crimson" style="align-self:flex-start; margin-bottom:var(--space-2);">মুদ্রণ মানদণ্ড</span>
+            <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2);">লেজার-শার্প ভেক্টর টাইপোগ্রাফি</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink);">মোবাইলে যতই জুম করুন, কোনো অক্ষর বা চিত্র ঝাপসা হবে না। পড়ার সুবিধার্থে এবং যেকোনো কম্পিউটার থেকে পরিষ্কার প্রিন্ট করার জন্য উপযোগী।</p>
+          </div>
+
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-forest" style="align-self:flex-start; margin-bottom:var(--space-2);">স্বচ্ছ মূল্য</span>
+            <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2);">কোনো মাসিক সাবস্ক্রিপশন নেই</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink);">একবারই মূল্য পরিশোধ করবেন, ফাইল চিরতরে আপনার। কোনো লুকানো চার্জ, অটো-রিনিউয়াল বা অপ্রয়োজনীয় বিজ্ঞাপন নেই।</p>
+          </div>
+
+          <div class="product-card" style="padding:var(--space-5);">
+            <span class="badge badge-ochre" style="align-self:flex-start; margin-bottom:var(--space-2);">ডিভাইস ব্যাকআপ</span>
+            <h3 style="font-size:var(--text-md); margin-bottom:var(--space-2);">আমার লাইব্রেরি সুবিধা</h3>
+            <p style="font-size:var(--text-sm); color:var(--slate-ink);">ফোন থেকে ফাইল ডিলিট হয়ে গেলেও কোনো চিন্তা নেই। এই ডিভাইসে একই ব্রাউজারে ঢুকলেই পুনরায় যতবার ইচ্ছা ফ্রিতে ডাউনলোড করতে পারবেন।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Essential FAQs Preview -->
+    <section class="section" style="background-color:var(--paper-subtle);">
+      <div class="container container-narrow">
+        <div class="section-header" style="text-align:center;">
+          <span class="section-eyebrow">প্রশ্নোত্তর</span>
+          <h2 class="section-title">সাধারণ কিছু জিজ্ঞাসা</h2>
+          <p class="section-subtitle">ক্রয়ের পূর্বে আপনার প্রয়োজনীয় তথ্যগুলো জেনে নিন:</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-summary">পেমেন্ট করার পর আমি ফাইল কীভাবে পাব?</summary>
+            <div class="faq-content">
+              বিকাশ বা নগদ থেকে টাকা পাঠিয়ে TrxID প্রদান করার সাথে সাথে স্ক্রিনে সরাসরি ডাউনলোড লিংক ওপেন হবে। এছাড়াও আপনার ফোনের ব্রাউজারে 'আমার লাইব্রেরি' ট্যাবে ক্লিক করলেই ক্রয়কৃত ফাইল আজীবন সংরক্ষিত দেখতে পাবেন।
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">আমার ফোন থেকে যদি ফাইল মুছে যায়, আবার কি টাকা দিতে হবে?</summary>
+            <div class="faq-content">
+              একদমই না! একই ফোন বা ব্রাউজার থেকে 'আমার লাইব্রেরি' পেজে ঢুকলে আপনি যতবার ইচ্ছা সম্পূর্ণ বিনামূল্যে পুনরায় ডাউনলোড করতে পারবেন।
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">ফাইলে কোনো সমস্যা থাকলে রিফান্ড পাওয়া যাবে কি?</summary>
+            <div class="faq-content">
+              ফাইলে কোনো টেকনিক্যাল ত্রুটি বা ভুল সংস্করণ প্রমাণিত হলে ক্রয়ের ২৪ ঘণ্টার মধ্যে যোগাযোগ করলে আমরা অবিলম্বে সঠিক ফাইল প্রতিস্থাপন (Replacement) অথবা সমমূল্যের স্টোর ক্রেডিট প্রদান করব। বিস্তারিত জানতে আমাদের রিফান্ড নীতিমালা পাতাটি দেখুন।
+            </div>
+          </details>
+        </div>
+
+        <div style="text-align:center; margin-top:var(--space-6);">
+          <a href="support.html" class="btn btn-secondary">আরও বিস্তারিত নিয়ম ও শর্তাবলী দেখুন →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-wordmark" style="margin-bottom:var(--space-3);">
+          <span class="brand-title">জ্ঞানকোষ</span>
+          <span class="brand-subtitle">DIGITAL PRESS</span>
+        </a>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) ২০২৬ কারিকুলাম মানদণ্ডে প্রস্তুতকৃত ডিজিটাল নোট, গাইড এবং ওয়েব টেমপ্লেটের বিশ্বস্ত কেন্দ্র।
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">ক্যাটালগ</h3>
+        <ul>
+          <li><a href="shop.html?class=ssc">নবম-দশম (SSC)</a></li>
+          <li><a href="shop.html?class=hsc">একাদশ-দ্বাদশ (HSC)</a></li>
+          <li><a href="shop.html?class=admission">ভর্তি পরীক্ষা</a></li>
+          <li><a href="shop.html?category=websites">ওয়েবসাইট টেমপ্লেট</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">গুরুত্বপূর্ণ লিংক</h3>
+        <ul>
+          <li><a href="library.html">আমার লাইব্রেরি</a></li>
+          <li><a href="support.html">সহায়তা ও প্রশ্নোত্তর</a></li>
+          <li><a href="support.html#refund">রিফান্ড নীতিমালা</a></li>
+          <li><a href="support.html#license">লাইসেন্সিং শর্তাবলী</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">যোগাযোগ ও ঠিকানা</h3>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ফোন ও WhatsApp:</strong><br>
+          <a href="https://wa.me/8801902607406" style="color:var(--carbon-ink); font-weight:700;">০১৯০২৬০৭৪০৬</a>
+        </p>
+        <p style="font-size:var(--text-sm); margin-bottom:var(--space-2);">
+          <strong>ইমেইল:</strong> ishanxczs@gmail.com
+        </p>
+        <p style="font-size:var(--text-sm); color:var(--slate-ink);">
+          ঢাকা, বাংলাদেশ (সম্পূর্ণ ডিজিটাল ডেলিভারি)
+        </p>
+        <div style="margin-top:var(--space-3); display:flex; gap:var(--space-2);">
+          <a href="https://www.tiktok.com/@its_ishan_17?_r=1&_t=ZS-9BT1d8s78pp" target="_blank" rel="noopener noreferrer" class="badge" aria-label="TikTok প্রোফাইল">TikTok</a>
+          <a href="https://www.instagram.com/ishanxczs26?avpt=c2IxeW9yY2x2ejlz" target="_blank" rel="noopener noreferrer" class="badge" aria-label="Instagram প্রোফাইল">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© ২০২৬ জ্ঞানকোষ ডিজিটাল প্রেস। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>কোনো অপ্রয়োজনীয় ট্র্যাকার বা কুকি নেই • অতি হালকা ও মোবাইল ফ্রেন্ডলি</span>
+    </div>
+  </footer>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/store-engine.js"></script>
+  <script>
+    // Tab switching for the Flagship Proof Sheet Viewer with WAI-ARIA Keyboard Support
+    function switchProofPage(pageIndex) {
+      for (var i = 1; i <= 3; i++) {
+        var tab = document.getElementById('tab-p' + i);
+        var view = document.getElementById('view-p' + i);
+        if (tab && view) {
+          if (i === pageIndex) {
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            tab.focus();
+            view.style.display = 'block';
+          } else {
+            tab.classList.remove('active');
+            tab.setAttribute('aria-selected', 'false');
+            tab.setAttribute('tabindex', '-1');
+            view.style.display = 'none';
+          }
+        }
+      }
+    }
+
+    // Accessible arrow navigation across proof tabs
+    document.addEventListener('DOMContentLoaded', function() {
+      var tabList = document.querySelector('.proof-tabs');
+      if (tabList) {
+        tabList.addEventListener('keydown', function(e) {
+          var tabs = [document.getElementById('tab-p1'), document.getElementById('tab-p2'), document.getElementById('tab-p3')];
+          var current = tabs.findIndex(function(t) { return t.classList.contains('active'); });
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = (current + 1) % tabs.length;
+            switchProofPage(next + 1);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            var prev = (current - 1 + tabs.length) % tabs.length;
+            switchProofPage(prev + 1);
+          }
+        });
+      }
+    });
+
+    // Immediate in-button feedback for Hero Cart Action
+    function handleHeroAddToCart(productId) {
+      var btn = document.getElementById('heroAddToCartBtn');
+      var res = StoreEngine.addToCart(productId);
+      if (btn) {
+        var originalText = 'কার্টে যোগ করুন';
+        btn.textContent = res.alreadyInCart ? '✓ ইতিমধ্যে ব্যাগে আছে' : '✓ ব্যাগে যুক্ত হয়েছে!';
+        btn.classList.add('btn-primary');
+        btn.classList.remove('btn-secondary');
+        setTimeout(function() {
+          btn.textContent = originalText;
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-secondary');
+        }, 2000);
+      }
+      StoreEngine.showToast(res.message, res.success ? 'success' : 'info');
+    }
+
+    // Populate Featured Products on Home
+    document.addEventListener('DOMContentLoaded', function() {
+      var grid = document.getElementById('homeFeaturedGrid');
+      if (grid && window.STORE_PRODUCTS) {
+        var featuredIds = ['note-ssc-phy-01', 'note-ssc-mat-03', 'note-hsc-phy-05', 'note-hsc-mat-06', 'ebook-math-formulas-13', 'web-coaching-portal-19'];
+        var featuredProducts = window.STORE_PRODUCTS.filter(function(p) {
+          return featuredIds.indexOf(p.id) !== -1;
+        });
+
+        var html = '';
+        for (var i = 0; i < featuredProducts.length; i++) {
+          var p = featuredProducts[i];
+          var discountPercent = Math.round(((p.priceRegular - p.priceSale) / p.priceRegular) * 100);
+          var specText = p.pages ? 'পৃষ্ঠা: ' + StoreEngine.toBn(p.pages) : 'ফাইল: ' + StoreEngine.toBn(p.filesCount || 8) + 'টি';
+
+          html += [
+            '<article class="product-card" id="card-' + p.id + '">',
+            '  <div class="product-cover-wrap">',
+            '    ' + StoreEngine.generateSvgCover(p, 320, 180),
+            '  </div>',
+            '  <div class="product-body">',
+            '    <div class="product-meta-strip">',
+            '      <span class="badge badge-crimson">' + p.classLabel + '</span>',
+            '      <span class="badge">' + p.subject + '</span>',
+            '    </div>',
+            '    <h3 class="product-title"><a href="product.html?id=' + p.id + '">' + p.title + '</a></h3>',
+            '    <p class="product-excerpt">' + p.subtitle + '</p>',
+            '    <div class="product-specs">',
+            '      <span>' + specText + '</span>',
+            '      <span>ফরম্যাট: ' + p.format + '</span>',
+            '      <span>সাইজ: ' + p.fileSize + '</span>',
+            '    </div>',
+            '    <div class="product-price-row">',
+            '      <div>',
+            '        <span class="price-regular">' + StoreEngine.formatPrice(p.priceRegular) + '</span>',
+            '        <span class="price-current">' + StoreEngine.formatPrice(p.priceSale) + '</span>',
+            '      </div>',
+            '      <span class="badge badge-forest">' + StoreEngine.toBn(discountPercent) + '% ছাড়</span>',
+            '    </div>',
+            '    <div class="product-actions">',
+            '      <button class="btn btn-secondary" onclick="handleCardAddToCart(\'' + p.id + '\', this);" aria-label="' + p.title + ' কার্টে যোগ করুন">কার্টে রাখুন</button>',
+            '      <a href="product.html?id=' + p.id + '" class="btn btn-primary" aria-label="' + p.title + ' বিস্তারিত বিবরণ দেখুন">বিস্তারিত</a>',
+            '    </div>',
+            '  </div>',
+            '</article>'
+          ].join('\n');
+        }
+        grid.innerHTML = html;
+      }
+    });
+
+    function handleCardAddToCart(productId, btn) {
+      var res = StoreEngine.addToCart(productId);
+      if (btn) {
+        var originalText = btn.textContent;
+        btn.textContent = res.alreadyInCart ? '✓ ইতিমধ্যে আছে' : '✓ যুক্ত হয়েছে!';
+        btn.classList.add('btn-primary');
+        btn.classList.remove('btn-secondary');
+        setTimeout(function() {
+          btn.textContent = originalText;
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-secondary');
+        }, 1800);
+      }
+      StoreEngine.showToast(res.message, res.success ? 'success' : 'info');
+    }
+
+    // Mobile Drawer Toggle with Escape Handler & Focus Management
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('mobileMenuBtn');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeBtn = document.getElementById('mobileDrawerClose');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      }
+
+      if (btn && drawer) {
+        btn.addEventListener('click', function() {
+          var isOpen = drawer.classList.contains('open');
+          if (isOpen) {
+            closeDrawer();
+          } else {
+            openDrawer();
+          }
+        });
+      }
+
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', closeDrawer);
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+          closeDrawer();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
